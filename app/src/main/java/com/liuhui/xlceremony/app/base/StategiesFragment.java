@@ -17,6 +17,7 @@ public class StategiesFragment extends Fragment {
 
     public StategiesFragment() {
         // Required empty public constructor
+
     }
 
 
