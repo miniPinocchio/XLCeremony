@@ -1,13 +1,52 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="com.liuhui.xlceremony.app.base.StategiesFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.ziv.xiaoli.StategyFragment">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:layout_height="wrap_content"
 
-</FrameLayout>
+        android:background="#DF1334"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            style="@style/tabButtonStyle"
+            android:textColor="@color/txt_color_selector"
+
+            android:text="情礼情境"
+            />
+        <TextView
+            style="@style/tabButtonStyle"
+            android:textColor="@color/txt_color_selector"
+            android:text="情礼对象"
+            />
+        <TextView
+            style="@style/tabButtonStyle"
+            android:textColor="@color/txt_color_selector"
+            android:text="对象爱好"
+            />
+        <TextView
+            style="@style/tabButtonStyle"
+            android:textColor="@color/txt_color_selector"
+            android:text="节日送礼"
+            />
+    </LinearLayout>
+    <android.support.v4.app.FragmentTabHost
+        android:id="@+id/stategy_fragment_tab_host"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v4.app.FragmentTabHost>
+    <ListView
+        android:id="@+id/stategy_vertical_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </ListView>
+    <!--android:drawableLeft="@mipmap/serach"-->
+    <!--android:background="@mipmap/button"-->
+</LinearLayout>

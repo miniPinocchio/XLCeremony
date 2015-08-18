@@ -2,10 +2,6 @@ package com.liuhui.xlceremony.app.ui.activity;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.base.BaseActivity;
 
@@ -20,7 +16,7 @@ public class SplashActivity extends BaseActivity {
 
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, LoginFragment.class));
+                startActivity(new Intent(SplashActivity.this, LoginSecondActivity.class));
                 finish();
             }
         }, 2000);
