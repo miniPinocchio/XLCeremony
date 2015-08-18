@@ -4,43 +4,105 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               tools:context="com.ziv.xiaoli.StategyFragment">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:background="#DF1334"
-        />
-    <LinearLayout
+    <!-- 最顶端一级菜单位 -->
+    <FrameLayout
+        android:id="@+id/stategy_fragment_real_tab_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
-        <TextView
+        <android.support.v4.app.FragmentTabHost
+            android:id="@+id/stategy_fragment_tab_host"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#DF1334">
+            <FrameLayout
+                android:id="@+id/stategy_fragment_tab_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0" />
+        </android.support.v4.app.FragmentTabHost>
+    </FrameLayout>
+    <!-- 四个用于分类 点击的二级菜单位 -->
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <RadioButton
             style="@style/tabButtonStyle"
             android:textColor="@color/txt_color_selector"
-
             android:text="情礼情境"
             />
-        <TextView
+        <RadioButton
             style="@style/tabButtonStyle"
             android:textColor="@color/txt_color_selector"
             android:text="情礼对象"
             />
-        <TextView
+        <RadioButton
             style="@style/tabButtonStyle"
             android:textColor="@color/txt_color_selector"
             android:text="对象爱好"
             />
-        <TextView
+        <RadioButton
             style="@style/tabButtonStyle"
             android:textColor="@color/txt_color_selector"
             android:text="节日送礼"
             />
-    </LinearLayout>
-    <android.support.v4.app.FragmentTabHost
-        android:id="@+id/stategy_fragment_tab_host"
+    </RadioGroup>
+    <!-- 三级横向滚动菜单 手指滑动下方并不跟随滑动 独立滑动单位-->
+    <HorizontalScrollView
+        android:id="@+id/stategy_horizontal_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </android.support.v4.app.FragmentTabHost>
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                style="@style/tabTextStyle"
+                android:text="全部"
+                />
+            <TextView
+                style="@style/tabTextStyle"
+                android:text="求婚"
+                />
+            <TextView
+                style="@style/tabTextStyle"
+                android:text="告白"
+                />
+            <TextView
+                style="@style/tabTextStyle"
+                android:text="探亲"
+                />
+            <TextView
+                style="@style/tabTextStyle"
+                android:text="乔迁"
+                />
+            <TextView
+                style="@style/tabTextStyle"
+                android:text="会友"
+                />
+            <TextView
+                style="@style/tabTextStyle"
+                android:text="商务"
+                />
+            <TextView
+                style="@style/tabTextStyle"
+                android:text="致谢"
+                />
+            <TextView
+                style="@style/tabTextStyle"
+                android:text="道歉"
+                />
+            <TextView
+                style="@style/tabTextStyle"
+                android:text=">"
+                />
+        </LinearLayout>
+    </HorizontalScrollView>
+    <!-- 内容详情展示列表 -->
     <ListView
         android:id="@+id/stategy_vertical_item"
         android:layout_width="match_parent"
@@ -48,5 +110,4 @@
         >
     </ListView>
     <!--android:drawableLeft="@mipmap/serach"-->
-    <!--android:background="@mipmap/button"-->
 </LinearLayout>

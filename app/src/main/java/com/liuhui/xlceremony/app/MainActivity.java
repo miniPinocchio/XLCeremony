@@ -2,16 +2,25 @@ package com.liuhui.xlceremony.app;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.liuhui.xlceremony.app.ui.fragment.StategiesFragment;
+import com.liuhui.xlceremony.app.util.LogUtil;
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        LayoutInflater inflater = getLayoutInflater();
+//        inflater.inflate(R.layout.fragment_stategies,null);
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_content,new StategiesFragment()).commit();
+        LogUtil.d("Ziv的Fragment");
     }
 
 
