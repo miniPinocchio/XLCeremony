@@ -1,4 +1,4 @@
-package com.liuhui.xlceremony.app.base;
+package com.liuhui.xlceremony.app.ui.fragment.substategyfragment;
 
 
 import android.os.Bundle;
@@ -12,12 +12,11 @@ import com.liuhui.xlceremony.app.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class StategiesFragment extends Fragment {
+public class Fragment2 extends Fragment {
 
 
-    public StategiesFragment() {
+    public Fragment2() {
         // Required empty public constructor
-
     }
 
 
@@ -25,7 +24,7 @@ public class StategiesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_stategies, container, false);
+        return inflater.inflate(R.layout.fragment_fragment2, container, false);
     }
 
 

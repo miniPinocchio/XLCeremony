@@ -7,6 +7,10 @@ package com.liuhui.xlceremony.app.bean;
  * Date 2015/8/17
  * Email:liu594545591@126.com
  */
+
+/**
+ * POST/GET请求后服务器返回的内容
+ */
 public class ResponseBody {
     private String status;
     private String data;
