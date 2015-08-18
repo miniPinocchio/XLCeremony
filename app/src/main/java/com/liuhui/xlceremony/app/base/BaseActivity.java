@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+
 import com.liuhui.xlceremony.app.AppManager;
 import com.liuhui.xlceremony.app.util.LogUtil;
 
@@ -38,11 +41,13 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         LogUtil.i("---------onCreate ");
 
+
         // 竖屏锁定
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         initViews();
 
+        
         AppManager.getAppManager().addActivity(this);
     }
 

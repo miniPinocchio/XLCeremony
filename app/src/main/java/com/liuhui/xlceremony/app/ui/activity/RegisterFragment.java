@@ -15,6 +15,7 @@ import com.liuhui.xlceremony.app.constant.AuthCode;
 import com.liuhui.xlceremony.app.constant.RequestParam;
 import com.liuhui.xlceremony.app.util.LogUtil;
 import com.liuhui.xlceremony.app.util.OkHttpUtil;
+import com.liuhui.xlceremony.app.util.ToastUtil;
 import com.squareup.okhttp.*;
 import com.liuhui.xlceremony.app.bean.ResponseBody;
 
@@ -67,13 +68,13 @@ public class RegisterFragment extends BaseActivity {
     private void getAuthCode() {
         String strMobilePhone = mobilePhone.getText().toString();
         if(strMobilePhone.length() == 0) {
-            App.toast("未输入手机号");
+            ToastUtil.toastLong("未输入手机号");
             return;
         } else if(strMobilePhone.length() < 11) {
-            App.toast("手机号未输入完整");
+            ToastUtil.toastLong("手机号未输入完整");
             return;
         } else if(!App.isMobilePhone(strMobilePhone)) {
-            App.toast("不存在此手机号");
+            ToastUtil.toastLong("不存在此手机号");
             return;
         }
 
@@ -92,7 +93,7 @@ public class RegisterFragment extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        App.toast("获取验证码失败，请重试");
+                        ToastUtil.toastLong("获取验证码失败，请重试");
                     }
                 });
             }
@@ -106,7 +107,7 @@ public class RegisterFragment extends BaseActivity {
 
                     @Override
                     public void run() {
-                        App.toast(strAuthCode);
+                        ToastUtil.toastLong(strAuthCode);
                         authCode.setText(strAuthCode);
                     }
                 });
@@ -124,28 +125,28 @@ public class RegisterFragment extends BaseActivity {
         String strAuthCode = authCode.getText().toString();
 
         if(strMobilePhone.length() == 0) {
-            App.toast("未输入手机号");
+            ToastUtil.toastLong("未输入手机号");
             return;
         } else if(strMobilePhone.length() < 11) {
-            App.toast("手机号未输入完整");
+            ToastUtil.toastLong("手机号未输入完整");
             return;
         } else if(!App.isMobilePhone(strMobilePhone)) {
-            App.toast("不存在此手机号");
+            ToastUtil.toastLong("不存在此手机号");
             return;
         } else if(strPassword.length() == 0 || strConfirmPassword.length() == 0) {
-            App.toast("未输入密码");
+            ToastUtil.toastLong("未输入密码");
             return;
         } else if(strPassword.length() < 6 || strConfirmPassword.length() == 0) {
-            App.toast("密码未输入完整");
+            ToastUtil.toastLong("密码未输入完整");
             return;
         } else if(!strPassword.equals(strConfirmPassword)) {
-            App.toast("两次输入的密码不一致");
+            ToastUtil.toastLong("两次输入的密码不一致");
             return;
         } else if(strAuthCode.length() == 0) {
-            App.toast("未输入短信验证码");
+            ToastUtil.toastLong("未输入短信验证码");
             return;
         } else if(!strAuthCode.equals(this.strAuthCode)) {
-            App.toast("短信验证码输入错误");
+            ToastUtil.toastLong("短信验证码输入错误");
             return;
         }
 
@@ -166,7 +167,7 @@ public class RegisterFragment extends BaseActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        App.toast("注册失败，请重试");
+                        ToastUtil.toastLong("注册失败，请重试");
                     }
                 });
             }
@@ -180,11 +181,11 @@ public class RegisterFragment extends BaseActivity {
                     @Override
                     public void run() {
                         if (responseBody.getStatus().equals("1")) {
-                            App.toast("注册成功");
+                            ToastUtil.toastLong("注册成功");
                             finish();
 
                         } else if (responseBody.getStatus().equals("0")) {
-                            App.toast("注册失败，请重试");
+                            ToastUtil.toastLong("注册失败，请重试");
 
                         }
                     }

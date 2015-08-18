@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -15,6 +17,7 @@ import com.liuhui.xlceremony.app.constant.Api;
 import com.liuhui.xlceremony.app.constant.RequestParam;
 import com.liuhui.xlceremony.app.util.LogUtil;
 import com.liuhui.xlceremony.app.util.OkHttpUtil;
+import com.liuhui.xlceremony.app.util.ToastUtil;
 import com.squareup.okhttp.*;
 
 import java.io.IOException;
@@ -78,19 +81,21 @@ public class LoginFragment extends BaseActivity {
         String strPassword = password.getText().toString();
 
         if(strMobilePhone.length() == 0) {
-            App.toast("未输入手机号");
+//            App.toast("未输入手机号");
+//            Toast.makeText(this,"未输入手机号",Toast.LENGTH_LONG).show();
+            ToastUtil.toastLong("未输入手机号");
             return;
-        } else if(strMobilePhone.length() < 11) {
-            App.toast("手机号未输入完整");
+        } else if(strMobilePhone.length() < 11&&strMobilePhone.length() > 0) {
+            ToastUtil.toastLong("手机号未输入完整");
             return;
         } else if(!App.isMobilePhone(strMobilePhone)) {
-            App.toast("不存在此手机号");
+            ToastUtil.toastLong("不存在此手机号");
             return;
         } else if(strPassword.length() == 0) {
-            App.toast("未输入密码");
+            ToastUtil.toastLong("未输入密码");
             return;
         } else if(strPassword.length() < 6) {
-            App.toast("密码未输入完整");
+            ToastUtil.toastLong("密码未输入完整");
             return;
         }
 
