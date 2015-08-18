@@ -8,7 +8,9 @@ package com.liuhui.xlceremony.app.constant;
  * Email:liu594545591@126.com
  */
 public class AuthCode {
+    //短信验证码
     private String pincode;
+
     private String optime;
 
     public void setPincode(String pincode) { this.pincode = pincode;}
