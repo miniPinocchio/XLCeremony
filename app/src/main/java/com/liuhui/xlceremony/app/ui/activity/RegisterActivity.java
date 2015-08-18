@@ -10,17 +10,17 @@ import com.google.gson.Gson;
 import com.liuhui.xlceremony.app.App;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.base.BaseActivity;
+import com.liuhui.xlceremony.app.bean.ResponseBody;
 import com.liuhui.xlceremony.app.constant.Api;
 import com.liuhui.xlceremony.app.constant.AuthCode;
 import com.liuhui.xlceremony.app.constant.RequestParam;
 import com.liuhui.xlceremony.app.util.LogUtil;
 import com.liuhui.xlceremony.app.util.OkHttpUtil;
 import com.squareup.okhttp.*;
-import com.liuhui.xlceremony.app.bean.ResponseBody;
 
 import java.io.IOException;
 
-public class RegisterFragment extends BaseActivity {
+public class RegisterActivity extends BaseActivity {
     @InjectView(R.id.mobilePhone)
     EditText mobilePhone;
 

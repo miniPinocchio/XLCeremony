@@ -1,9 +1,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
               android:orientation="vertical"
-                tools:context="com.liuhui.xlceremony.app.ui.activity.LoginFragment">
+              tools:context="com.liuhui.xlceremony.app.ui.activity.LoginSecondActivity"
+        >
 
     <include layout="@layout/action_bar"/>
 
