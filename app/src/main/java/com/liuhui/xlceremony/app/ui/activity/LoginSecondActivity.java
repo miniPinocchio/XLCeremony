@@ -19,7 +19,7 @@ import com.squareup.okhttp.*;
 
 import java.io.IOException;
 
-public class LoginFragment extends BaseActivity {
+public class LoginSecondActivity extends BaseActivity {
 
     @InjectView(R.id.actionBarTitle)
     TextView title;
@@ -63,7 +63,7 @@ public class LoginFragment extends BaseActivity {
                 login();
                 break;
             case R.id.register:
-                startActivity(new Intent(this, RegisterFragment.class));
+                startActivity(new Intent(this, RegisterActivity.class));
                 break;
             case R.id.forgetPassword:
                 break;
