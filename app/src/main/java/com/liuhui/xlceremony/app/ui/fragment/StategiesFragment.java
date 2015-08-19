@@ -1,21 +1,16 @@
 package com.liuhui.xlceremony.app.ui.fragment;
 
 
-import android.content.Context;
 import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TabHost;
 import android.widget.TextView;
-
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.base.BaseFragment;
 import com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment1;
 import com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment2;
-import com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment3;
-import com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment4;
-import com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment5;
 
 /**
  * Created with Android Studio.
@@ -23,6 +18,7 @@ import com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment5;
  * user  Ziv
  * Date 2015/8/17
  * Email:Ziv_Android@Outlook.com
+ * 情礼关系界面
  */
 public class StategiesFragment extends BaseFragment {
     //FragmentTabhost

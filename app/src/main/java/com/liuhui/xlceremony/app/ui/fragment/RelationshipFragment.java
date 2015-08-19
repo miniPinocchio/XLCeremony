@@ -10,6 +10,7 @@ import com.liuhui.xlceremony.app.R;
 
 /**
  * A simple {@link Fragment} subclass.
+ * 关系管理界面
  */
 public class RelationshipFragment extends Fragment {
 

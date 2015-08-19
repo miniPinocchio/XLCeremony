@@ -10,6 +10,7 @@ import com.liuhui.xlceremony.app.R;
 
 /**
  * A simple {@link Fragment} subclass.
+ * 我的界面
  */
 public class PersonalFragment extends Fragment {
 

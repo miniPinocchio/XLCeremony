@@ -10,11 +10,12 @@ import com.liuhui.xlceremony.app.R;
 
 /**
  * A simple {@link Fragment} subclass.
+ *发现界面
  */
-public class FriendFragment extends Fragment {
+public class FindFragment extends Fragment {
 
 
-    public FriendFragment() {
+    public FindFragment() {
         // Required empty public constructor
     }
 

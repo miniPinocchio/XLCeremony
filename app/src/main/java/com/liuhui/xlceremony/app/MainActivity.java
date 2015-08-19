@@ -5,7 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.RadioGroup;
 import com.liuhui.xlceremony.app.base.BaseActivity;
-import com.liuhui.xlceremony.app.ui.fragment.FriendFragment;
+import com.liuhui.xlceremony.app.ui.fragment.FindFragment;
 import com.liuhui.xlceremony.app.ui.fragment.PersonalFragment;
 import com.liuhui.xlceremony.app.ui.fragment.RelationshipFragment;
 import com.liuhui.xlceremony.app.ui.fragment.StategiesFragment;
@@ -14,7 +14,7 @@ import com.liuhui.xlceremony.app.ui.fragment.StategiesFragment;
 public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
 
     private RelationshipFragment relationshipFragment;
-    private FriendFragment friendFragment;
+    private FindFragment friendFragment;
     private PersonalFragment personalFragment;
     private StategiesFragment stategiesFragment;
 
@@ -43,7 +43,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                 break;
             case R.id.tab_friend:
                 if (friendFragment == null){
-                    friendFragment = new FriendFragment();
+                    friendFragment = new FindFragment();
                 }
                 fragment = friendFragment;
                 break;
