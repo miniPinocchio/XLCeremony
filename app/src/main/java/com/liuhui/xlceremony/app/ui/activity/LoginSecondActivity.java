@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -69,6 +67,7 @@ public class LoginSecondActivity extends BaseActivity {
                 startActivity(new Intent(this, RegisterActivity.class));
                 break;
             case R.id.forgetPassword:
+
                 break;
         }
     }

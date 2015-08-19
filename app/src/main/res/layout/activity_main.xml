@@ -2,43 +2,55 @@
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
-             tools:context=".MainActivity">
+             tools:context=".MainActivity"
+        >
+
     <FrameLayout
-        android:id="@+id/fragment_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
     </FrameLayout>
+
     <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        android:layout_gravity="bottom"
-        >
+            android:id="@+id/main_tab"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:layout_gravity="bottom"
+            >
+
         <RadioButton
-            style="@style/tabButtonStyle.RadioButtonStyle"
-            android:drawableTop="@drawable/menu_relation_selector"
-            android:text="关系管理"
-            android:textColor="@color/txt_color_selector"
-            />
+                android:id="@+id/tab_relationship"
+                style="@style/tabButtonStyle.RadioButtonStyle"
+                android:drawableTop="@drawable/menu_relation_selector"
+                android:text="关系管理"
+                android:textColor="@color/txt_color_selector"
+                />
+
         <RadioButton
-            style="@style/tabButtonStyle.RadioButtonStyle"
-            android:drawableTop="@drawable/menu_strategy_selector"
-            android:text="情礼攻略"
-            android:textColor="@color/txt_color_selector"
-            />
+                android:id="@+id/tab_friend"
+                style="@style/tabButtonStyle.RadioButtonStyle"
+                android:drawableTop="@drawable/menu_strategy_selector"
+                android:text="情礼攻略"
+                android:textColor="@color/txt_color_selector"
+                />
+
         <RadioButton
-            style="@style/tabButtonStyle.RadioButtonStyle"
-            android:drawableTop="@drawable/menu_discover_selector"
-            android:text="发现"
-            android:textColor="@color/txt_color_selector"
-            />
+                android:id="@+id/tab_discover"
+                style="@style/tabButtonStyle.RadioButtonStyle"
+                android:drawableTop="@drawable/menu_discover_selector"
+                android:text="发现"
+                android:textColor="@color/txt_color_selector"
+                />
+
         <RadioButton
-            style="@style/tabButtonStyle.RadioButtonStyle"
-            android:drawableTop="@drawable/menu_my_selector"
-            android:text="我的"
-            android:textColor="@color/txt_color_selector"
-            />
+                android:id="@+id/tab_personal"
+                style="@style/tabButtonStyle.RadioButtonStyle"
+                android:drawableTop="@drawable/menu_my_selector"
+                android:text="我的"
+                android:textColor="@color/txt_color_selector"
+                />
     </RadioGroup>
 </FrameLayout>
