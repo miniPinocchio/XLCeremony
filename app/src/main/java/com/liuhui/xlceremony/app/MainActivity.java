@@ -1,48 +1,70 @@
 package com.liuhui.xlceremony.app;
 
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.widget.RadioGroup;
+import com.liuhui.xlceremony.app.base.BaseActivity;
+import com.liuhui.xlceremony.app.ui.fragment.FriendFragment;
+import com.liuhui.xlceremony.app.ui.fragment.PersonalFragment;
+import com.liuhui.xlceremony.app.ui.fragment.RelationshipFragment;
 import com.liuhui.xlceremony.app.ui.fragment.StategiesFragment;
-import com.liuhui.xlceremony.app.util.LogUtil;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
+
+    private RelationshipFragment relationshipFragment;
+    private FriendFragment friendFragment;
+    private PersonalFragment personalFragment;
+    private StategiesFragment stategiesFragment;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initViews() {
         setContentView(R.layout.activity_main);
-//        LayoutInflater inflater = getLayoutInflater();
-//        inflater.inflate(R.layout.fragment_stategies,null);
-        getSupportFragmentManager().beginTransaction().add(R.id.fragment_content,new StategiesFragment()).commit();
-        LogUtil.d("Ziv的Fragment");
-    }
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.main_tab);
+        radioGroup.setOnCheckedChangeListener(this);
+        radioGroup.check(R.id.tab_relationship);
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void onCheckedChanged(RadioGroup group, int checkedId) {
+        FragmentManager manager = getSupportFragmentManager();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        FragmentTransaction transaction = manager.beginTransaction();
+
+        Fragment fragment = null;
+        switch (checkedId){
+            case R.id.tab_relationship:
+                if (relationshipFragment == null) {
+                    relationshipFragment = new RelationshipFragment();
+                }
+                fragment = relationshipFragment;
+                break;
+            case R.id.tab_friend:
+                if (friendFragment == null){
+                    friendFragment = new FriendFragment();
+                }
+                fragment = friendFragment;
+                break;
+            case R.id.tab_discover:
+                if (stategiesFragment == null){
+                    stategiesFragment = new StategiesFragment();
+                }
+                fragment = stategiesFragment;
+                break;
+            case R.id.tab_personal:
+                if (personalFragment == null){
+                    personalFragment = new PersonalFragment();
+                }
+                fragment = personalFragment;
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
+        transaction.replace(R.id.fragment_container,fragment);
+        transaction.commit();
     }
+
+
+
+
 }
