@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <ListView
+        android:id="@+id/fragment_stategies_details_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </ListView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="10dp"
+        >
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:hint="发表您的评论"
+            android:paddingLeft="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/shape_round_rect"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="@drawable/shape_login_button"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="发布"/>
+    </LinearLayout>
+</FrameLayout>

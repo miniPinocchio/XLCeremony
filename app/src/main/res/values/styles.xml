@@ -57,5 +57,13 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    
+    <style name="littleTag">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:background">@drawable/shape_stategy_tab_button</item>
+    </style>
     <!-- End Ziv creat-->
 </resources>
