@@ -27,4 +27,14 @@
     <color name="graywhite">#F5F5F5</color>
     <color name="grayslate">#708090</color>
     <color name="lightblue">#0083FF</color>
+    
+    <!-- creat by Ziv-->
+    <color name="txt_no_selected">#E8D1D1</color>
+    <color name="txt_selected">#FDFFFB</color>
+    <color name="btn_bg_selected">#FFDEE7</color>
+    <color name="btn_bg_no_selected">#F2F2F2</color>
+    <color name="btn_txt_selected">#E01238</color>
+    <color name="btn_txt_no_selected">#282828</color>
+    
+    <!-- end creat-->
 </resources>

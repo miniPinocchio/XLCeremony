@@ -6,7 +6,7 @@
         android:id="@+id/stategy_vertical_item_image"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@mipmap/ic_launcher"
+        android:background="@mipmap/image"
         />
     <TextView
         android:layout_width="wrap_content"

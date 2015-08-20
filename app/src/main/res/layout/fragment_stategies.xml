@@ -6,7 +6,7 @@
     <TabHost
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         >
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,32 +25,37 @@
                 android:visibility="gone" />
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:orientation="horizontal"
                 android:gravity="center"
+                android:background="@color/main_color"
                 >
                 <RadioButton
                     android:id="@+id/fragment_stategies_tab_plan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/tab_selector_title"
                     android:text="方案"
+                    android:textColor="@color/txt_color_selector"
                     android:button="@null"
                     />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_color"
+                    android:layout_margin="10dp"/>
                 <RadioButton
                     android:id="@+id/fragment_stategies_tab_story"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/tab_selector_title"
                     android:text="故事"
+                    android:textColor="@color/txt_color_selector"
                     android:button="@null"
                     />
             </RadioGroup>
-            <android.support.v4.view.ViewPager
-                android:id="@+id/fragment_stategies_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </android.support.v4.view.ViewPager>
         </LinearLayout>
     </TabHost>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/serach"/>
 </FrameLayout>
