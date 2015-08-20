@@ -1,244 +1,56 @@
-<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              tools:context="com.ziv.xiaoli.StategyFragment"
-              android:id="@android:id/tabhost">
-    <LinearLayout
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             tools:context="com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment1">
+    <TabHost
+        android:id="@android:id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TabWidget
-            android:id="@android:id/tabs"
+        android:layout_height="wrap_content"
+        >
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
-        <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-            <LinearLayout
-                android:id="@+id/fragment_tab_content_layout_1"
-                android:layout_width="wrap_content"
+            android:orientation="vertical" >
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0" >
+            </FrameLayout>
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:visibility="gone" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
                 >
-                <TextView
+                <RadioButton
+                    android:id="@+id/fragment_stategies_tab_plan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/tab_selector_title"
                     android:text="方案"
+                    android:button="@null"
                     />
-                <Button
+                <RadioButton
+                    android:id="@+id/fragment_stategies_tab_story"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    />
-                <!-- 最顶端一级菜单位 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    >
-
-                    <!-- 四个用于分类 点击的二级菜单位 -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
-                        <Button
-                            style="@style/tabButtonStyle"
-                            android:textColor="@color/txt_color_selector"
-                            android:text="情礼情境"
-                            />
-
-                        <Button
-                            style="@style/tabButtonStyle"
-                            android:textColor="@color/txt_color_selector"
-                            android:text="情礼对象"
-                            />
-                        <Button
-                            style="@style/tabButtonStyle"
-                            android:textColor="@color/txt_color_selector"
-                            android:text="对象爱好"
-                            />
-                        <Button
-                            style="@style/tabButtonStyle"
-                            android:textColor="@color/txt_color_selector"
-                            android:text="节日送礼"
-                            />
-                    </LinearLayout>
-                    <!--三级横向滚动菜单 手指滑动下方并不跟随滑动 独立滑动单位-->
-                    <HorizontalScrollView
-                        android:id="@+id/stategy_horizontal_scroll_view1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:scrollbars="none"
-                        >
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="全部"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="求婚"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="告白"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="探亲"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="乔迁"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="会友"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="商务"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="致谢"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="道歉"
-                                />
-                        </LinearLayout>
-                    </HorizontalScrollView>
-                    <!-- 内容详情展示列表 -->
-                    <ListView
-                        android:id="@+id/stategy_vertical_item1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
-                    </ListView>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/fragment_tab_content_layout_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:background="@drawable/tab_selector_title"
                     android:text="故事"
+                    android:button="@null"
                     />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    />
-                <!-- 最顶端一级菜单位 -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    >
-
-                    <!-- 四个用于分类 点击的二级菜单位 -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
-                        <Button
-                            style="@style/tabButtonStyle"
-                            android:textColor="@color/txt_color_selector"
-                            android:text="情礼情境"
-                            />
-
-                        <Button
-                            style="@style/tabButtonStyle"
-                            android:textColor="@color/txt_color_selector"
-                            android:text="情礼对象"
-                            />
-                        <Button
-                            style="@style/tabButtonStyle"
-                            android:textColor="@color/txt_color_selector"
-                            android:text="对象爱好"
-                            />
-                        <Button
-                            style="@style/tabButtonStyle"
-                            android:textColor="@color/txt_color_selector"
-                            android:text="节日送礼"
-                            />
-                    </LinearLayout>
-                    <!--三级横向滚动菜单 手指滑动下方并不跟随滑动 独立滑动单位-->
-                    <HorizontalScrollView
-                        android:id="@+id/stategy_horizontal_scroll_view2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="20dp"
-                        android:scrollbars="none"
-                        >
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            >
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="全部"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="求婚"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="告白"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="探亲"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="乔迁"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="会友"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="商务"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="致谢"
-                                />
-                            <TextView
-                                style="@style/tabTextStyle"
-                                android:text="道歉"
-                                />
-                        </LinearLayout>
-                    </HorizontalScrollView>
-                    <!-- 内容详情展示列表 -->
-                    <ListView
-                        android:id="@+id/stategy_vertical_item2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
-                    </ListView>
-                </LinearLayout>
-            </LinearLayout>
-        </FrameLayout>
-    </LinearLayout>
-</TabHost>
+            </RadioGroup>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/fragment_stategies_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v4.view.ViewPager>
+        </LinearLayout>
+    </TabHost>
+</FrameLayout>
