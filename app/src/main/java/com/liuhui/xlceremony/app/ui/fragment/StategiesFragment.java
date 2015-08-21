@@ -1,19 +1,13 @@
 package com.liuhui.xlceremony.app.ui.fragment;
 
 
-import android.support.v4.app.FragmentTabHost;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TabHost;
-import android.widget.TextView;
-
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.base.BaseFragment;
-import com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment1;
-import com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment2;
 
 /**
  * Created with Android Studio.
