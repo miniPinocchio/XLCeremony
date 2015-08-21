@@ -26,7 +26,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         setContentView(R.layout.activity_main);
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.main_tab);
         radioGroup.setOnCheckedChangeListener(this);
-        radioGroup.check(R.id.tab_relationship);
+        radioGroup.check(R.id.tab_stategy);
 
     }
 
@@ -44,17 +44,17 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                 }
                 fragment = relationshipFragment;
                 break;
-            case R.id.tab_friend:
-                if (friendFragment == null){
-                    friendFragment = new FindFragment();
-                }
-                fragment = friendFragment;
-                break;
-            case R.id.tab_discover:
+            case R.id.tab_stategy:
                 if (stategiesFragment == null){
                     stategiesFragment = new StategiesFragment();
                 }
                 fragment = stategiesFragment;
+                break;
+            case R.id.tab_discover:
+                if (friendFragment == null){
+                    friendFragment = new FindFragment();
+                }
+                fragment = friendFragment;
                 break;
             case R.id.tab_personal:
                 if (personalFragment == null){
@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                 fragment = personalFragment;
                 break;
         }
-        transaction.replace(R.id.fragment_container, fragment);
+        transaction.replace(R.id.fragment_container,fragment);
         transaction.commit();
     }
 

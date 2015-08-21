@@ -32,7 +32,7 @@
                 />
 
         <RadioButton
-                android:id="@+id/tab_friend"
+                android:id="@+id/tab_stategy"
                 style="@style/tabButtonStyle.RadioButtonStyle"
                 android:drawableTop="@drawable/selector_tab_stategy"
                 android:text="情礼攻略"
