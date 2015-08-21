@@ -33,6 +33,10 @@
             android:name=".ui.activity.ForgetPassword"
             android:label="@string/title_activity_forget_password" >
         </activity>
+        <activity
+            android:name=".ui.activity.ContactsManagerActivity"
+            android:label="@string/title_activity_contacts_manager" >
+        </activity>
     </application>
 
 </manifest>

@@ -3,7 +3,9 @@ package com.liuhui.xlceremony.app;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 import com.liuhui.xlceremony.app.base.BaseActivity;
 import com.liuhui.xlceremony.app.ui.fragment.FindFragment;
 import com.liuhui.xlceremony.app.ui.fragment.PersonalFragment;
@@ -17,6 +19,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     private FindFragment friendFragment;
     private PersonalFragment personalFragment;
     private StategiesFragment stategiesFragment;
+    private long exitTime = 0;
 
     @Override
     protected void initViews() {
@@ -60,11 +63,27 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
                 fragment = personalFragment;
                 break;
         }
-        transaction.replace(R.id.fragment_container,fragment);
+        transaction.replace(R.id.fragment_container, fragment);
         transaction.commit();
     }
 
 
-
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK
+                && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+                Toast.makeText(getApplicationContext(), "再按一次退出程序",
+                        Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            } else {
+                AppManager.getAppManager().AppExit(this);
+                finish();
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
 }

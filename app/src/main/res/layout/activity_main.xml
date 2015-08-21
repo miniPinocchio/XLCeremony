@@ -1,14 +1,16 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+              android:orientation="vertical"
              tools:context=".MainActivity"
         >
 
     <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             >
     </FrameLayout>
 
@@ -24,7 +26,7 @@
         <RadioButton
                 android:id="@+id/tab_relationship"
                 style="@style/tabButtonStyle.RadioButtonStyle"
-                android:drawableTop="@drawable/menu_relation_selector"
+                android:drawableTop="@drawable/selector_tab_relationship"
                 android:text="关系管理"
                 android:textColor="@color/txt_color_selector"
                 />
@@ -32,7 +34,7 @@
         <RadioButton
                 android:id="@+id/tab_friend"
                 style="@style/tabButtonStyle.RadioButtonStyle"
-                android:drawableTop="@drawable/menu_strategy_selector"
+                android:drawableTop="@drawable/selector_tab_stategy"
                 android:text="情礼攻略"
                 android:textColor="@color/txt_color_selector"
                 />
@@ -40,7 +42,7 @@
         <RadioButton
                 android:id="@+id/tab_discover"
                 style="@style/tabButtonStyle.RadioButtonStyle"
-                android:drawableTop="@drawable/menu_discover_selector"
+                android:drawableTop="@drawable/selector_tab_discover"
                 android:text="发现"
                 android:textColor="@color/txt_color_selector"
                 />
@@ -48,9 +50,9 @@
         <RadioButton
                 android:id="@+id/tab_personal"
                 style="@style/tabButtonStyle.RadioButtonStyle"
-                android:drawableTop="@drawable/menu_my_selector"
+                android:drawableTop="@drawable/selector_tab_personal"
                 android:text="我的"
                 android:textColor="@color/txt_color_selector"
                 />
     </RadioGroup>
-</FrameLayout>
+</LinearLayout>
