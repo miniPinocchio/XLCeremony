@@ -16,8 +16,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:textSize="20dp"
-
+        android:textSize="18dp"
+        android:layout_marginTop="10dp"
         android:text="aa"
         />
     <TextView
@@ -55,6 +55,7 @@
         android:numColumns="3"
         android:stretchMode="columnWidth"
         android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
         ></com.liuhui.xlceremony.app.ui.customview.MyGridview>
 
 

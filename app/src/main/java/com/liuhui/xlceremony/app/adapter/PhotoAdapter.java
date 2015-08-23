@@ -90,7 +90,7 @@ public class PhotoAdapter extends BaseAdapter {
 
         //设置数据
         Photo photo=list.get(position);
-        String day=photo.getDay()+"天";
+        String day=photo.getDay()+"日";
         String month=photo.getYear()+"年"+photo.getMonth()+"月";
 
         holder.txtDay.setText(day);

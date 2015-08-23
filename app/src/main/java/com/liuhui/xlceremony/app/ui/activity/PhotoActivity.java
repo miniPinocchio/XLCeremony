@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.PhotoAdapter;
@@ -29,6 +31,8 @@ public class PhotoActivity extends FragmentActivity implements View.OnClickListe
 
     //返回按钮
     private ImageView imageBack;
+    //发送按钮
+    private TextView txtFasong;
 
 
     @Override
@@ -37,7 +41,12 @@ public class PhotoActivity extends FragmentActivity implements View.OnClickListe
         setContentView(R.layout.activity_photo);
         listView= (ListView) findViewById(R.id.list_view_photo);
         gridView= (GridView) findViewById(R.id.grid_view);
+
         imageBack= (ImageView) findViewById(R.id.find_photo_back);
+        txtFasong= (TextView) findViewById(R.id.find_photo_fasong);
+
+        int[]image={R.mipmap.photo_01,R.mipmap.photo_02,R.mipmap.photo_03};
+
 
         list = new LinkedList<Photo>();
         for (int i = 0; i <30 ; i++) {
@@ -50,7 +59,7 @@ public class PhotoActivity extends FragmentActivity implements View.OnClickListe
             photoList = new LinkedList<SubPhoto>();
             for(int j=0;j<i+1;j++) {
                 SubPhoto subPhoto = new SubPhoto();
-                subPhoto.setResId(R.mipmap.ic_launcher);
+                subPhoto.setResId(image[j%3]);
                 subPhoto.setTitle((j+1) + "上传");
                 photoList.add(subPhoto);
 
@@ -64,6 +73,7 @@ public class PhotoActivity extends FragmentActivity implements View.OnClickListe
         listView.setAdapter(adapter);
 
         imageBack.setOnClickListener(this);
+        txtFasong.setOnClickListener(this);
     }
 
 
@@ -87,6 +97,9 @@ public class PhotoActivity extends FragmentActivity implements View.OnClickListe
                 list.get(position).setClickCount(count);
 
                 adapter.notifyDataSetChanged();
+                break;
+            case R.id.find_photo_fasong:
+                Toast.makeText(this,"跳转到发送界面",Toast.LENGTH_LONG).show();
                 break;
         }
 

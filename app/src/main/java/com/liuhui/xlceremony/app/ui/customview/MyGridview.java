@@ -9,7 +9,7 @@ import android.widget.GridView;
  */
 
 /**
- *    要重写GridView中的onMeasure方法，因为直接用ListView嵌套GridView是会出问题的
+ *    瑕侀噸鍐橤ridView涓殑onMeasure鏂规硶锛屽洜涓虹洿鎺ョ敤ListView宓屽GridView鏄細鍑洪棶棰樼殑
  */
 public class MyGridview extends GridView {
     public MyGridview(Context context) {

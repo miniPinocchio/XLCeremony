@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#f3f3f3"
+    android:layout_height="100dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        >
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="match_parent"
+
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_centerInParent="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="情礼方案推荐"
+            android:textSize="15sp"
+            android:textColor="#fff"
+            android:background="@drawable/remind_shape_txt"
+            />
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/line11"
+            android:layout_width="3dp"
+            android:layout_height="55dp"
+           android:layout_centerVertical="true"
+            android:background="#bc2337"
+            />
+
+        <TextView
+            android:id="@+id/txt_juli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="距离"
+            android:textColor="#bc2337"
+            android:textSize="15sp"
+            android:layout_toRightOf="@id/line11"
+            android:layout_alignTop="@id/line11"
+            android:layout_marginLeft="4dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="七夕节发红包"
+            android:textSize="15sp"
+            android:layout_below="@id/txt_juli"
+            android:paddingLeft="2dp"
+            android:layout_alignLeft="@id/txt_juli"
+
+            />
+        <TextView
+            android:id="@+id/txt_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="还有xx天"
+            android:textSize="15sp"
+            android:layout_toRightOf="@id/line11"
+            android:layout_alignBottom="@id/line11"
+            android:paddingLeft="2dp"
+            android:layout_alignLeft="@id/txt_juli"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="match_parent"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="删除"
+            android:textSize="15sp"
+            android:textColor="#fff"
+
+            android:background="@drawable/remind_shape_button"
+            android:layout_centerInParent="true"
+            />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

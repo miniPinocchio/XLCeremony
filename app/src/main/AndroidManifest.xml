@@ -41,6 +41,10 @@
             android:name=".ui.activity.PhotoActivity"
             android:label="@string/title_activity_photo" >
         </activity>
+        <activity
+            android:name=".ui.activity.Remindctivity"
+            android:label="@string/title_activity_remindctivity" >
+        </activity>
     </application>
 
 </manifest>

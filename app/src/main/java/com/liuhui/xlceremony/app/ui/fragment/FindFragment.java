@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.FindAdapter;
 import com.liuhui.xlceremony.app.ui.activity.PhotoActivity;
+import com.liuhui.xlceremony.app.ui.activity.Remindctivity;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -65,6 +66,8 @@ public class FindFragment extends Fragment implements AdapterView.OnItemClickLis
                 startActivity(intent);
                 break;
             case 1:
+                Intent intent1=new Intent(getActivity(), Remindctivity.class);
+                startActivity(intent1);
 
                 break;
             case 2:
