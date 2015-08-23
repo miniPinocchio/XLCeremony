@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+                android:orientation="horizontal">
+<RelativeLayout
+    android:id="@+id/relative"
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:layout_height="match_parent"
+    android:layout_marginRight="10dp"
+    >
+
+    <TextView
+        android:id="@+id/list_view_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textSize="20dp"
+
+        android:text="aa"
+        />
+    <TextView
+        android:id="@+id/list_view_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/list_view_day"
+        android:layout_alignRight="@id/list_view_day"
+        android:textSize="10dp"
+        android:text="aa"
+        />
+    <TextView
+        android:id="@+id/list_view_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/list_view_day"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:text="更多▽"
+        android:textSize="15sp"
+
+        />
+
+
+</RelativeLayout>
+
+
+    <com.liuhui.xlceremony.app.ui.customview.MyGridview
+        android:id="@+id/grid_view"
+        android:layout_width="0dp"
+        android:layout_weight="4"
+        android:layout_height="match_parent"
+        android:verticalSpacing="3dp"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:layout_alignParentRight="true"
+        ></com.liuhui.xlceremony.app.ui.customview.MyGridview>
+
+
+
+</LinearLayout>

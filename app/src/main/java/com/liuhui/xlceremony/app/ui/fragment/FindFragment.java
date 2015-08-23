@@ -2,6 +2,7 @@ package com.liuhui.xlceremony.app.ui.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.FindAdapter;
+import com.liuhui.xlceremony.app.ui.activity.PhotoActivity;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -58,7 +60,9 @@ public class FindFragment extends Fragment implements AdapterView.OnItemClickLis
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){
             case 0:
-                Toast.makeText(context,"相册",Toast.LENGTH_LONG).show();
+                //Toast.makeText(context,"相册",Toast.LENGTH_LONG).show();
+                Intent intent=new Intent(getActivity(),PhotoActivity.class);
+                startActivity(intent);
                 break;
             case 1:
 
