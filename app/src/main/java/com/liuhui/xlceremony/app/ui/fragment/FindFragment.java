@@ -14,8 +14,6 @@ import android.widget.Toast;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.FindAdapter;
 
-import org.w3c.dom.ProcessingInstruction;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,7 +24,7 @@ import java.util.List;
 public class FindFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private ListView listView;
-    private List<Integer> list;
+
     private Context context;
 
 
@@ -45,18 +43,12 @@ public class FindFragment extends Fragment implements AdapterView.OnItemClickLis
 
         listView= (ListView) ret.findViewById(R.id.list_view_find);
 
-        list = new LinkedList<Integer>();
-        list.add(R.mipmap.find_01);
-        list.add(R.mipmap.find_02);
-        list.add(R.mipmap.find_03);
-        list.add(R.mipmap.find_04);
-        list.add(R.mipmap.find_05);
-        list.add(R.mipmap.find_06);
 
-        FindAdapter adapter=new FindAdapter(context, list);
+
+        FindAdapter adapter=new FindAdapter(context);
         listView.setAdapter(adapter);
 
-        //listView.setOnItemClickListener(this);
+        listView.setOnItemClickListener(this);
 
         return ret;
     }
