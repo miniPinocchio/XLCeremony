@@ -53,6 +53,10 @@
             android:name=".ui.activity.CardActivity"
             android:label="@string/title_activity_card" >
         </activity>
+        <activity
+            android:name=".ui.activity.CareActivity"
+            android:label="@string/title_activity_care" >
+        </activity>
     </application>
 
 </manifest>

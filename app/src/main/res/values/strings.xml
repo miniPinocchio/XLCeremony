@@ -35,5 +35,6 @@
     <string name="title_activity_remindctivity">Remindctivity</string>
     <string name="title_activity_sms">SmsActivity</string>
     <string name="title_activity_card">CardActivity</string>
+    <string name="title_activity_care">CareActivity</string>
 
 </resources>

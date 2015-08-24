@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="com.liuhui.xlceremony.app.ui.activity.CardActivity"
+              tools:context="com.liuhui.xlceremony.app.ui.activity.CareActivity"
     >
 
     <RelativeLayout
@@ -13,7 +13,7 @@
         android:background="#DF1135"
         >
         <ImageView
-            android:id="@+id/card_back"
+            android:id="@+id/care_back"
             android:layout_marginLeft="10dp"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
@@ -22,7 +22,6 @@
 
             />
 
-<!--要给TabLayout设置固定宽度，不然会宽度会占满屏幕，点不到左边的返回箭头了-->
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_kaquan"
             android:layout_width="300dp"
@@ -32,8 +31,6 @@
             app:tabSelectedTextColor="#fff"
             app:tabIndicatorHeight="3dp"
             app:tabTextColor="#fff"
-            app:tabPaddingStart="10dp"
-            app:tabPaddingEnd="10dp"
 
             />
 
@@ -45,6 +42,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
-
 
 </LinearLayout>
