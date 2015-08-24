@@ -45,6 +45,14 @@
             android:name=".ui.activity.Remindctivity"
             android:label="@string/title_activity_remindctivity" >
         </activity>
+        <activity
+            android:name=".ui.activity.SmsActivity"
+            android:label="@string/title_activity_sms" >
+        </activity>
+        <activity
+            android:name=".ui.activity.CardActivity"
+            android:label="@string/title_activity_card" >
+        </activity>
     </application>
 
 </manifest>

@@ -3,11 +3,15 @@ package com.liuhui.xlceremony.app.ui.activity;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.RemindListAadapter;
@@ -19,26 +23,40 @@ public class Remindctivity extends FragmentActivity implements View.OnClickListe
 
     private ListView listView;
     private ImageView remind_back;
+    private List<String> list;
+    private RemindListAadapter adapter;
+
+    private TextView txtNew;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remindctivity);
 
+        txtNew= (TextView) findViewById(R.id.find_remind_new);
+
         remind_back= (ImageView) findViewById(R.id.remind_back);
 
         listView= (ListView) findViewById(R.id.remind_list_view);
 
-        List<String> list=new LinkedList<String>();
+        list = new LinkedList<String>();
         list.add("11");
         list.add("22");
         list.add("33");
+        list.add("44");
+        list.add("55");
+        list.add("66");
 
-        RemindListAadapter aadapter=new RemindListAadapter(this,list);
-        listView.setAdapter(aadapter);
+        adapter = new RemindListAadapter(this, list);
+
+        adapter.setOnClickListener(this);
+
+        listView.setAdapter(adapter);
 
 
         remind_back.setOnClickListener(this);
+        txtNew.setOnClickListener(this);
 
     }
 
@@ -49,6 +67,17 @@ public class Remindctivity extends FragmentActivity implements View.OnClickListe
         switch (id){
             case R.id.remind_back:
                 onBackPressed();
+                break;
+            case R.id.remind_del:
+                int position= (Integer) v.getTag();
+                list.remove(position);
+                Log.d("laine11",position+"");
+                Log.d("laine11",list.toString());
+
+                adapter.notifyDataSetChanged();
+                break;
+            case R.id.find_remind_new:
+                Toast.makeText(this,"跳转到新建提醒界面",Toast.LENGTH_LONG).show();
                 break;
         }
     }

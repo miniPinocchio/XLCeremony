@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               android:orientation="vertical"
+                tools:context="com.liuhui.xlceremony.app.ui.activity.SmsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#DF1135"
+        >
+
+        <ImageView
+            android:id="@+id/sms_back"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/icon_back"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="短信模板"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/news_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#f4f4f4"
+        >
+
+        <!-- 使用公共的样式属性来简化xml-->
+        <RadioButton
+            android:id="@+id/tab_home"
+            style="@style/News_Tab_Button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="情礼意境"
+            />
+        <RadioButton
+            android:id="@+id/tab_read"
+            style="@style/News_Tab_Button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="情礼对象"
+            />
+        <RadioButton
+            android:id="@+id/tab_video"
+            style="@style/News_Tab_Button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="对象爱好"
+            />
+        <RadioButton
+            android:id="@+id/tab_discover"
+            style="@style/News_Tab_Button"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="节日送礼"
+            />
+
+    </RadioGroup>
+    <FrameLayout
+        android:id="@+id/fragment_contion"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></FrameLayout>
+
+
+</LinearLayout>
