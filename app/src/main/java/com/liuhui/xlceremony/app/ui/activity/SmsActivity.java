@@ -1,20 +1,15 @@
 package com.liuhui.xlceremony.app.ui.activity;
 
 import android.os.Build;
+import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
-
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.ui.fragment.subfind.SmsFirstFragment;
 

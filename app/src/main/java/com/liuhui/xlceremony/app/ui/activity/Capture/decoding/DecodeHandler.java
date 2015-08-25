@@ -21,22 +21,16 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
-
-import com.google.zxing.BinaryBitmap;
-import com.google.zxing.DecodeHintType;
-import com.google.zxing.MultiFormatReader;
-import com.google.zxing.ReaderException;
-import com.google.zxing.Result;
+import com.google.zxing.*;
 import com.google.zxing.common.HybridBinarizer;
-import com.liuhui.xlceremony.app.ui.activity.Capture.CaptureActivity;
-
-//import com.liuhui.xlceremony.app.ui.activity.Capture.R;
 import com.liuhui.xlceremony.app.R;
-
+import com.liuhui.xlceremony.app.ui.activity.Capture.CaptureActivity;
 import com.liuhui.xlceremony.app.ui.activity.Capture.camera.CameraManager;
 import com.liuhui.xlceremony.app.ui.activity.Capture.camera.PlanarYUVLuminanceSource;
 
 import java.util.Hashtable;
+
+//import com.liuhui.xlceremony.app.ui.activity.Capture.R;
 // TODO please add an import statement for R class
 // import ****.R;
 

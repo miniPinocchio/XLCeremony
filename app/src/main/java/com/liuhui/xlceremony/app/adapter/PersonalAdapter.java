@@ -1,21 +1,14 @@
 package com.liuhui.xlceremony.app.adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.os.AsyncTask;
-import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.base.CommonAdapter;
-import com.squareup.okhttp.Call;
 
 import java.util.List;
-
-import static com.squareup.okhttp.Call.*;
 
 /**
  * Created from "com.liuhui.xlceremony.app.adapter".

@@ -1,12 +1,10 @@
 package com.liuhui.xlceremony.app.util;
 
 
-import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.base.BaseFragment;
 

@@ -18,7 +18,6 @@ package com.liuhui.xlceremony.app.ui.activity.Capture.decoding;
 
 import android.content.Intent;
 import android.net.Uri;
-
 import com.google.zxing.BarcodeFormat;
 
 import java.util.Arrays;

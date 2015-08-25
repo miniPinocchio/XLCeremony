@@ -1,12 +1,8 @@
 package com.liuhui.xlceremony.app.base;
 
-import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-
 import com.liuhui.xlceremony.app.AppManager;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.util.LogUtil;

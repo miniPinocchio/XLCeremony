@@ -3,7 +3,6 @@ package com.liuhui.xlceremony.app.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-
 import com.liuhui.xlceremony.app.ui.fragment.FindCareFragment1;
 
 /**

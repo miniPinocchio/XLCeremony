@@ -10,19 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
-
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.FindAdapter;
 import com.liuhui.xlceremony.app.ui.activity.Capture.CaptureActivity;
-import com.liuhui.xlceremony.app.ui.activity.CardActivity;
-import com.liuhui.xlceremony.app.ui.activity.CareActivity;
-import com.liuhui.xlceremony.app.ui.activity.PhotoActivity;
-import com.liuhui.xlceremony.app.ui.activity.Remindctivity;
-import com.liuhui.xlceremony.app.ui.activity.SmsActivity;
-
-import java.util.LinkedList;
-import java.util.List;
+import com.liuhui.xlceremony.app.ui.activity.*;
 
 /**
  * A simple {@link Fragment} subclass.

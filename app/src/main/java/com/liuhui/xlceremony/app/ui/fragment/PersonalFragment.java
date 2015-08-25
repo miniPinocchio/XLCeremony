@@ -6,18 +6,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
-import com.liuhui.xlceremony.app.ui.activity.PersonalActivity;
-import com.liuhui.xlceremony.app.ui.activity.PresentRecorderActivity;
+import android.widget.*;
 import com.liuhui.xlceremony.app.R;
-import com.liuhui.xlceremony.app.ui.activity.SettingActivity;
 import com.liuhui.xlceremony.app.adapter.PersonalAdapter;
 import com.liuhui.xlceremony.app.base.BaseFragment;
+import com.liuhui.xlceremony.app.ui.activity.PersonalActivity;
+import com.liuhui.xlceremony.app.ui.activity.PresentRecorderActivity;
+import com.liuhui.xlceremony.app.ui.activity.SettingActivity;
 import com.liuhui.xlceremony.app.util.ToastUtil;
 
 import java.util.LinkedList;

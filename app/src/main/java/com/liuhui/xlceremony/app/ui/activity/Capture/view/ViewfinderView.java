@@ -24,18 +24,14 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
-
 import com.google.zxing.ResultPoint;
-
-
-//import com.liuhui.xlceremony.app.ui.activity.Capture.R;
 import com.liuhui.xlceremony.app.R;
-
-
 import com.liuhui.xlceremony.app.ui.activity.Capture.camera.CameraManager;
 
 import java.util.Collection;
 import java.util.HashSet;
+
+//import com.liuhui.xlceremony.app.ui.activity.Capture.R;
 
 /**
  * This view is overlaid on top of the camera preview. It adds the viewfinder rectangle and partial
@@ -90,7 +86,7 @@ public final class ViewfinderView extends View {
 
     // Draw the exterior (i.e. outside the framing rect) darkened
     paint.setColor(resultBitmap != null ? resultColor : maskColor);
-  //»æÖÆÒõÓ°²¿·Ö
+  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½ï¿½
     canvas.drawRect(0, 0, width, frame.top, paint);
     canvas.drawRect(0, frame.top, frame.left, frame.bottom + 1, paint);
     canvas.drawRect(frame.right + 1, frame.top, width, frame.bottom + 1, paint);
@@ -103,7 +99,7 @@ public final class ViewfinderView extends View {
     } else {
 
       // Draw a two pixel solid black border inside the framing rect
-      //»æÖÆ±ß¿ò
+      //ï¿½ï¿½ï¿½Æ±ß¿ï¿½
     	paint.setColor(frameColor);
       canvas.drawRect(frame.left, frame.top, frame.right + 1, frame.top + 2, paint);
       canvas.drawRect(frame.left, frame.top + 2, frame.left + 2, frame.bottom - 1, paint);
@@ -111,11 +107,11 @@ public final class ViewfinderView extends View {
       canvas.drawRect(frame.left, frame.bottom - 1, frame.right + 1, frame.bottom + 1, paint);
       
 //      paint.setColor(laserColor);
-//      //»æÖÆ4½Ç
-//      //×óÉÏ½Ç
+//      //ï¿½ï¿½ï¿½ï¿½4ï¿½ï¿½
+//      //ï¿½ï¿½ï¿½Ï½ï¿½
 //      canvas.drawRect(frame.left, frame.top, frame.left+25, frame.top+4, paint);
 //      canvas.drawRect(frame.left, frame.top, frame.left+4, frame.top+25, paint);
-//      //×óÏÂ½Ç
+//      //ï¿½ï¿½ï¿½Â½ï¿½
 //      canvas.drawRect(frame.left, frame.bottom, frame.left+25, frame.bottom-18, paint);
 //      canvas.drawRect(frame.left, frame.bottom, frame.left+4, frame.bottom-25, paint);
       //

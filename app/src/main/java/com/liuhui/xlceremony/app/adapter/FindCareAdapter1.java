@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.bean.CareItem;
 

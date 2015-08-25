@@ -1,21 +1,11 @@
 package com.liuhui.xlceremony.app.ui.activity;
 
 import android.os.Build;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.PhotoAdapter;
 import com.liuhui.xlceremony.app.bean.Photo;
