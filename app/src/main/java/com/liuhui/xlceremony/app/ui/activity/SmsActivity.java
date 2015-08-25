@@ -1,5 +1,6 @@
 package com.liuhui.xlceremony.app.ui.activity;
 
+import android.os.Build;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -8,8 +9,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 
 import com.liuhui.xlceremony.app.R;
@@ -23,17 +26,37 @@ public class SmsActivity extends FragmentActivity implements RadioGroup.OnChecke
 
     private ImageView imgBack;
 
+
+    private LinearLayout layout;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sms);
+
+
+        layout= (LinearLayout) findViewById(R.id.kaquan_statusbar);
+
+
+        //åˆ¤æ–­å½“å‰SDKç‰ˆæœ¬å·ï¼Œå¦‚æžœæ˜¯4.4ä»¥ä¸Šï¼Œå°±æ˜¯æ”¯æŒæ²‰æµ¸å¼çŠ¶æ€æ çš„
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }else{
+            layout.setVisibility(View.GONE);
+        }
+
+
+
 
         imgBack= (ImageView) findViewById(R.id.sms_back);
 
         imgBack.setOnClickListener(this);
 
         tabBar= (RadioGroup) findViewById(R.id.news_tab_bar);
-        //tebBarÉèÖÃµã»÷ÊÂ¼þ
+        //tabBarè®¾ç½®ç‚¹å‡»äº‹ä»¶
         tabBar.setOnCheckedChangeListener( this);
 
 
@@ -53,14 +76,14 @@ public class SmsActivity extends FragmentActivity implements RadioGroup.OnChecke
         switch (checkedId){
 
 
-            case R.id.tab_home:  //ÐÂÎÅ
+            case R.id.tab_home:  //ï¿½ï¿½ï¿½ï¿½
                 fragmentTransaction.replace(R.id.fragment_contion,fragment);
                 break;
-            case R.id.tab_read:   //ÔÄ¶Á
+            case R.id.tab_read:   //ï¿½Ä¶ï¿½
                 break;
-            case R.id.tab_video:    //ÊÓÌý
+            case R.id.tab_video:    //ï¿½ï¿½ï¿½ï¿½
                 break;
-            case R.id.tab_discover:    //·¢ÏÖ
+            case R.id.tab_discover:    //ï¿½ï¿½ï¿½ï¿½
                 break;
         }
         fragmentTransaction.commit();

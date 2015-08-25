@@ -4,6 +4,18 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 tools:context="com.liuhui.xlceremony.app.ui.activity.PhotoActivity">
+
+
+    <LinearLayout
+        android:id="@+id/kaquan_statusbar"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="vertical"
+        android:background="#DF1135"
+
+        ></LinearLayout>
+
+
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="45dp"
