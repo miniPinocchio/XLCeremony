@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#fff">
+
+    <TextView
+        android:id="@+id/txt_sms"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textColor="#7e7e7e"
+        android:text="dslhfjldalkfjadkladsdaaaaaaaaaaaaaaaaassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssddddddddddddddddddddddddddddddddddddddddddddddddd"
+        />
+
+
+
+        <Button
+            android:id="@+id/sms_button_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="30dp"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:background="@drawable/sms_shape_button_item"
+            android:textColor="#fff"
+            android:text="一键发送"
+
+            />
+
+
+
+</LinearLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:background="#f3f3f3"
+                android:layout_height="100dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        >
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="￥150"
+                android:textSize="20sp"
+                android:textColor="#878787"
+
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:id="@+id/line11"
+                android:layout_width="3dp"
+                android:layout_height="62dp"
+                android:layout_centerVertical="true"
+                android:background="#bc2337"
+                />
+
+            <LinearLayout
+                android:layout_toRightOf="@id/line11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerVertical="true"
+                >
+            <TextView
+                android:id="@+id/txt_juli"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="晓礼网创意婚庆礼品优惠券"
+                android:textSize="15sp"
+                android:layout_marginLeft="4dp"
+
+                />
+            <TextView
+                android:id="@+id/txt_guize2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="卡券规则XXXXXXXX"
+                android:textSize="12sp"
+                android:layout_marginLeft="4dp"
+
+                />
+            <TextView
+                android:id="@+id/txt_xianzhi2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用限制XXXXXXXX"
+                android:textSize="12sp"
+                android:layout_marginLeft="4dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="·2015-06-12至2015-06-18"
+                android:textSize="12sp"
+                android:layout_marginLeft="4dp"
+                />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已使用"
+                android:textSize="15sp"
+                android:textColor="#9a9a9a"
+                android:layout_centerInParent="true"
+                />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
