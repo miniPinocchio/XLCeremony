@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="#D9D9D9"
+              tools:context="com.liuhui.xlceremony.app.MyFragment">
+
+    <include layout="@layout/action_bar"/>
+
+    <ListView
+        android:id="@+id/list_view_personal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="14dp"
+        android:layout_marginTop="14dp"
+        android:background="#FFF"
+        android:divider="#D9D9D9"
+        >
+
+    </ListView>
+</LinearLayout>

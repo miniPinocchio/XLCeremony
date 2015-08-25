@@ -1,0 +1,120 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.liuhui.xlceremony.app.SettingSafePhoneActivity">
+
+    <include layout="@layout/action_bar"/>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_marginTop="30dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:text="@string/mobile_phone"
+        />
+
+    <EditText
+        android:id="@+id/edit_mobilePhone"
+        style="@style/textCursorDrawable"
+        android:background="@drawable/shape_round_rect"
+        android:hint="请输入手机号"
+        android:inputType="phone"
+        android:maxLength="11"
+        android:padding="5dp"
+        />
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:weightSum="1">
+
+        <Space
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="match_parent"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:text="已验证手机 :18999999"
+            android:singleLine="true"
+            android:textSize="12sp"
+            android:gravity="center_vertical"
+            android:layout_height="match_parent"
+            />
+        <Space
+            android:layout_width="0dp"
+            android:layout_weight="0.1"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/btn_setting_phone_pin_code"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_marginBottom="8dp"
+            android:text="获取验证码"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_height="match_parent"
+            android:background="@color/main_color"
+
+            />
+
+    </LinearLayout>
+   
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:singleLine="true"
+            android:text="短信验证"
+           />
+
+        <EditText
+            android:id="@+id/pin_code"
+            style="@style/textCursorDrawable"
+            android:background="@drawable/shape_round_rect"
+            android:hint="@string/input_login_password"
+            android:inputType="textPassword"
+            android:maxLength="12"
+            android:padding="5dp"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_setting_safe_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="提交"
+        android:background="@color/main_color"
+        />
+
+</LinearLayout>

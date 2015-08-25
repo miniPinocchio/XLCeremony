@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="#D9D9D9"
+              tools:context="com.liuhui.xlceremony.app.SettingSafeActivity">
+
+    <include layout="@layout/action_bar"></include>
+
+    <ListView
+        android:id="@+id/setting_safe_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:divider="#D9D9D9"
+        android:dividerHeight="14dp"
+        />
+
+</LinearLayout>

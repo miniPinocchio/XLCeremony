@@ -4,11 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-import butterknife.OnClick;
 import com.liuhui.xlceremony.app.App;
 import com.liuhui.xlceremony.app.MainActivity;
 import com.liuhui.xlceremony.app.R;
@@ -18,9 +14,17 @@ import com.liuhui.xlceremony.app.constant.RequestParam;
 import com.liuhui.xlceremony.app.util.LogUtil;
 import com.liuhui.xlceremony.app.util.OkHttpUtil;
 import com.liuhui.xlceremony.app.util.ToastUtil;
-import com.squareup.okhttp.*;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class LoginSecondActivity extends BaseActivity {
 
@@ -81,8 +85,6 @@ public class LoginSecondActivity extends BaseActivity {
         String strPassword = password.getText().toString();
 
         if(strMobilePhone.length() == 0) {
-//            App.toast("未输入手机号");
-//            Toast.makeText(this,"未输入手机号",Toast.LENGTH_LONG).show();
             ToastUtil.toastLong("未输入手机号");
             return;
         } else if(strMobilePhone.length() < 11&&strMobilePhone.length() > 0) {
@@ -111,13 +113,11 @@ public class LoginSecondActivity extends BaseActivity {
         OkHttpUtil.enqueue(loginRequest, new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {
-                //				App.toast("登录失败，请重试");
                 LogUtil.e("登录失败，请重试");
             }
 
             @Override
             public void onResponse(Response response) throws IOException {
-                //				App.toast(response.body().string());
                 LogUtil.e(response.body().string());
             }
         });

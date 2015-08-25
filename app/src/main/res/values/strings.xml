@@ -8,7 +8,14 @@
     <string name="app_name">晓礼</string>
 
     <string name="login_title">登陆账号</string>
+    <string name="me_title">我</string>
+    <string name="personal_title">个人信息</string>
+    <string name="setting_title">设置</string>
+    <string name="setting_safe_title">安全设置</string>
+    <string name="setting_safe_edit_phone_title">更改手机设置</string>
+    <string name="present_recorder_title">我的提醒</string>
     <string name="cancel">取消</string>
+    <string name="edit">编辑</string>
     <string name="mobile_phone">手机号</string>
     <string name="password">密码</string>
     <string name="input_login_mobile_phone">请输入所注册的手机号</string>
@@ -28,5 +35,13 @@
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_test_zy">TestZYActivity</string>
+    <string name="title_activity_personal">PersonalActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_setting_safe">SettingSafeActivity</string>
+    <string name="title_activity_setting_safe_phone">SettingSafePhoneActivity</string>
+    <string name="title_activity_present_record">PresentRecord</string>
+    <string name="title_activity_present_recorder">PresentRecorderActivity</string>
+    <string name="title_activity_setting_safe_email">SettingSafeEmailActivity</string>
 
 </resources>

@@ -3,6 +3,7 @@
     package="com.liuhui.xlceremony.app" >
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,15 +11,22 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
-
         </activity>
         <activity
-            android:name=".ui.activity.LoginActivity"
+            android:name=".ui.activity.LoginSecondActivity"
             android:label="@string/title_activity_login" >
         </activity>
         <activity
             android:name=".ui.activity.SplashActivity"
-            android:label="@string/title_activity_splash" >
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ui.activity.RegisterActivity"
+            android:label="@string/title_activity_register_fragment" >
+        </activity>
+        <activity
+            android:name=".TestZYActivity"
+            android:label="@string/title_activity_test_zy" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,12 +34,28 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.LoginFragment"
-            android:label="@string/title_activity_login_fragment" >
+            android:name=".PersonalActivity"
+            android:label="@string/title_activity_personal" >
         </activity>
         <activity
-            android:name=".ui.activity.RegisterFragment"
-            android:label="@string/title_activity_register_fragment" >
+            android:name=".SettingActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name=".SettingSafeActivity"
+            android:label="@string/title_activity_setting_safe" >
+        </activity>
+        <activity
+            android:name=".SettingSafePhoneActivity"
+            android:label="@string/title_activity_setting_safe_phone" >
+        </activity>
+        <activity
+            android:name=".PresentRecorderActivity"
+            android:label="@string/title_activity_present_recorder" >
+        </activity>
+        <activity
+            android:name=".SettingSafeEmailActivity"
+            android:label="@string/title_activity_setting_safe_email" >
         </activity>
     </application>
 
