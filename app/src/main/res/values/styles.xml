@@ -42,9 +42,10 @@
     <!-- Creat by Ziv-->
     <style name="tabButtonStyle">
         <item name = "android:layout_width">0dp</item>
-        <item name = "android:layout_height">40dp</item>
-        <item name = "android:layout_weight">1</item>
+        <item name = "android:layout_height">match_parent</item>
         <item name = "android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name= "android:background">@drawable/btn_bg_color_selector</item>
         <item name = "android:button">@null</item>
     </style>
 
@@ -56,6 +57,26 @@
         <item name="android:layout_width">50dp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/btn_txt_color_selector</item>
+    </style>
+    
+    <style name="littleTag">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:background">@drawable/shape_stategy_tab_button</item>
     </style>
     <!-- End Ziv creat-->
+
+    <style name="News_Tab_Button">
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/sms_shape_button</item>
+        <item name="android:textColor">@color/news_tab_text_color</item>
+
+    </style>
 </resources>

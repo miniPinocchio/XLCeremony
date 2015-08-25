@@ -1,113 +1,61 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              tools:context="com.ziv.xiaoli.StategyFragment">
-    <!-- 最顶端一级菜单位 -->
-    <FrameLayout
-        android:id="@+id/stategy_fragment_real_tab_content"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             tools:context="com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment1">
+    <TabHost
+        android:id="@android:id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-        <android.support.v4.app.FragmentTabHost
-            android:id="@+id/stategy_fragment_tab_host"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#DF1334">
-            <FrameLayout
-                android:id="@+id/stategy_fragment_tab_content"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="0" />
-        </android.support.v4.app.FragmentTabHost>
-    </FrameLayout>
-    <!-- 四个用于分类 点击的二级菜单位 -->
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <RadioButton
-            style="@style/tabButtonStyle"
-            android:textColor="@color/txt_color_selector"
-            android:text="情礼情境"
-            />
-        <RadioButton
-            style="@style/tabButtonStyle"
-            android:textColor="@color/txt_color_selector"
-            android:text="情礼对象"
-            />
-        <RadioButton
-            style="@style/tabButtonStyle"
-            android:textColor="@color/txt_color_selector"
-            android:text="对象爱好"
-            />
-        <RadioButton
-            style="@style/tabButtonStyle"
-            android:textColor="@color/txt_color_selector"
-            android:text="节日送礼"
-            />
-    </RadioGroup>
-    <!-- 三级横向滚动菜单 手指滑动下方并不跟随滑动 独立滑动单位-->
-    <HorizontalScrollView
-        android:id="@+id/stategy_horizontal_scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <TextView
-                style="@style/tabTextStyle"
-                android:text="全部"
-                />
-            <TextView
-                style="@style/tabTextStyle"
-                android:text="求婚"
-                />
-            <TextView
-                style="@style/tabTextStyle"
-                android:text="告白"
-                />
-            <TextView
-                style="@style/tabTextStyle"
-                android:text="探亲"
-                />
-            <TextView
-                style="@style/tabTextStyle"
-                android:text="乔迁"
-                />
-            <TextView
-                style="@style/tabTextStyle"
-                android:text="会友"
-                />
-            <TextView
-                style="@style/tabTextStyle"
-                android:text="商务"
-                />
-            <TextView
-                style="@style/tabTextStyle"
-                android:text="致谢"
-                />
-            <TextView
-                style="@style/tabTextStyle"
-                android:text="道歉"
-                />
-            <TextView
-                style="@style/tabTextStyle"
-                android:text=">"
-                />
+            android:orientation="vertical" >
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0" >
+            </FrameLayout>
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@color/main_color"
+                >
+                <RadioButton
+                    android:id="@+id/fragment_stategies_tab_plan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="方案"
+                    android:textColor="@color/txt_color_selector"
+                    android:button="@null"
+                    />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_color"
+                    android:layout_margin="10dp"/>
+                <RadioButton
+                    android:id="@+id/fragment_stategies_tab_story"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="故事"
+                    android:textColor="@color/txt_color_selector"
+                    android:button="@null"
+                    />
+            </RadioGroup>
         </LinearLayout>
-    </HorizontalScrollView>
-    <!-- 内容详情展示列表 -->
-    <ListView
-        android:id="@+id/stategy_vertical_item"
-        android:layout_width="match_parent"
+    </TabHost>
+    <ImageView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        >
-    </ListView>
-    <!--android:drawableLeft="@mipmap/serach"-->
-</LinearLayout>
+        android:background="@mipmap/serach"/>
+</FrameLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+               android:background="#f0f0f0" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:layout_marginBottom="20dp"
+        >
+    <CheckBox
+        android:id="@+id/item_cart_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"/>
+
+    <ImageView
+        android:id="@+id/item_cart_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/item_cart_check"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:src="@mipmap/img_kaquan"
+        />
+    <TextView
+        android:id="@+id/item_cart_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_toRightOf="@id/item_cart_icon"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:text="晓礼网创意婚庆礼品优惠券"
+        android:textSize="14sp"
+        android:textColor="#000"
+        android:layout_toEndOf="@+id/item_cart_icon"
+
+        />
+    <TextView
+        android:id="@+id/txt_guize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="#888"
+        android:textSize="9sp"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@id/item_cart_name"
+        android:layout_below="@id/item_cart_name"
+        android:text="·卡券规则XXXXXXXX"
+
+        />
+    <TextView
+        android:id="@+id/txt_xianzhi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="#888"
+        android:textSize="9sp"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@id/item_cart_name"
+        android:layout_below="@id/txt_guize"
+        android:text="·使用限制XXXXXXXX"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textColor="#888"
+        android:textSize="9sp"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@id/item_cart_name"
+        android:layout_below="@id/txt_xianzhi"
+        android:text="·2015-06-12至2015-06-18"
+
+        />
+
+    </RelativeLayout>
+</RelativeLayout>

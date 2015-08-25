@@ -1,11 +1,7 @@
 package com.liuhui.xlceremony.app.util;
 
 import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.widget.Toast;
-
 import com.liuhui.xlceremony.app.App;
 
 /**
@@ -15,8 +11,10 @@ import com.liuhui.xlceremony.app.App;
  */
 public class ToastUtil {
 
+
+
 	private static Context context;
-	
+
 	public ToastUtil() {
 
 	}
@@ -58,5 +56,31 @@ public class ToastUtil {
 	}
 
 
-};
+}
+
+//	static void toast(final Context act, final int msg, final int len) {
+//		new Thread(new Runnable() {
+//			@Override
+//			public void run() {
+//				handler.post(new Runnable() {
+//					@Override
+//					public void run() {
+//						synchronized (ToastUtil.class) {
+//							if (toast != null) {
+//								toast.cancel();
+//								toast.setText(msg);
+//								toast.setDuration(len);
+//							} else {
+//								toast = Toast.makeText(act, msg, len);
+//							}
+//							toast.show();
+//						}
+//					}
+//				});
+//			}
+//		}).start();
+//	}
+
+
+
 
