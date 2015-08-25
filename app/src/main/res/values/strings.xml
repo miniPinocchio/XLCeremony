@@ -31,5 +31,9 @@
     <string name="title_activity_forget_password">忘记密码</string>
     <string name="confirm">确定</string>
     <string name="title_activity_contacts_manager">ContactsManagerActivity</string>
+    <string name="title_activity_net_relationship">NetRelationshipActivity</string>
+    <string name="title_activity_relationship_rank">RelationshipRankActivity</string>
+    <string name="title_activity_contacts_list_group">ContactsListGroup</string>
+    <string name="title_activity_send_to_friends">SendToFriendsActivity</string>
 
 </resources>

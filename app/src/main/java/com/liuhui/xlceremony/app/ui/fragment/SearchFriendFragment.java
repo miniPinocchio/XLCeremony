@@ -5,6 +5,7 @@ import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DataSetObserver;
 import android.graphics.PixelFormat;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,10 +31,10 @@ import java.util.regex.Pattern;
  * Created with InetlliJ IDEA.
  * Project: com.liuhui.xlceremony.app.ui.fragment
  * user  Pinocchio
- * Date 2015/8/20
+ * Date 2015/8/24
  * Email:liu594545591@126.com
  */
-public class FriendsListFragment extends Fragment implements View.OnClickListener {
+public class SearchFriendFragment extends Fragment implements View.OnClickListener {
     private BaseAdapter adapter;
     private ListView personList;
     private TextView overlay;
@@ -132,8 +133,26 @@ public class FriendsListFragment extends Fragment implements View.OnClickListene
 
     }
     private void setAdapter(List<ContentValues> list) {
-        adapter = new ListFriendAdapter(getActivity(), list,this);
+        adapter = new ListFriendAdapter(getActivity(), list);
         personList.setAdapter(adapter);
+
+        adapter.registerDataSetObserver(new DataSetObserver() {
+            /**
+             * 当Adapter notifyDataSetChanged()的时候
+             * 自动被回调,就可以遍历新的数据了
+             */
+            @Override
+            public void onChanged() {
+                //TODO 计算人数
+                double sum = 0;
+               
+            }
+
+            @Override
+            public void onInvalidated() {
+                super.onInvalidated();
+            }
+        });
 
     }
 
@@ -171,12 +190,11 @@ public class FriendsListFragment extends Fragment implements View.OnClickListene
     private class ListFriendAdapter extends BaseAdapter {
         private LayoutInflater inflater;
         private List<ContentValues> list;
-        private View.OnClickListener listener;
+        private CompoundButton.OnCheckedChangeListener listener;
 
-        public ListFriendAdapter(Context context, List<ContentValues> list,View.OnClickListener listener) {
+        public ListFriendAdapter(Context context, List<ContentValues> list) {
             this.inflater = LayoutInflater.from(context);
             this.list = list;
-            this.listener = listener;
             alphaIndexer = new HashMap<String, Integer>();
             sections = new String[list.size()];
 
@@ -228,10 +246,7 @@ public class FriendsListFragment extends Fragment implements View.OnClickListene
                 holder.personImg = (ImageView) convertView.findViewById(R.id.list_friend_person_img);
                 holder.checkBox = (CheckBox) convertView.findViewById(R.id.contacts_check);
 
-                holder.gift.setOnClickListener(listener);
-                holder.impress.setOnClickListener(listener);
-                holder.score.setOnClickListener(listener);
-                holder.personImg.setOnClickListener(listener);
+                holder.checkBox.setOnCheckedChangeListener(listener);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
@@ -286,6 +301,7 @@ public class FriendsListFragment extends Fragment implements View.OnClickListene
             }
         }
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){

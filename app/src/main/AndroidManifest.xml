@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.liuhui.xlceremony.app" >
 
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -36,6 +38,22 @@
         <activity
             android:name=".ui.activity.ContactsManagerActivity"
             android:label="@string/title_activity_contacts_manager" >
+        </activity>
+        <activity
+            android:name=".ui.activity.NetRelationshipActivity"
+            android:label="@string/title_activity_net_relationship" >
+        </activity>
+        <activity
+            android:name=".ui.activity.RelationshipRankActivity"
+            android:label="@string/title_activity_relationship_rank" >
+        </activity>
+        <activity
+            android:name=".ui.activity.ContactsListGroupActivity"
+            android:label="@string/title_activity_contacts_list_group" >
+        </activity>
+        <activity
+            android:name=".ui.activity.SendToFriendsActivity"
+            android:label="@string/title_activity_send_to_friends" >
         </activity>
     </application>
 
