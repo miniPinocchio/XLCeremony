@@ -14,7 +14,9 @@ import android.widget.Toast;
 
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.FindAdapter;
+import com.liuhui.xlceremony.app.ui.activity.Capture.CaptureActivity;
 import com.liuhui.xlceremony.app.ui.activity.CardActivity;
+import com.liuhui.xlceremony.app.ui.activity.CareActivity;
 import com.liuhui.xlceremony.app.ui.activity.PhotoActivity;
 import com.liuhui.xlceremony.app.ui.activity.Remindctivity;
 import com.liuhui.xlceremony.app.ui.activity.SmsActivity;
@@ -78,6 +80,8 @@ public class FindFragment extends Fragment implements AdapterView.OnItemClickLis
 
                 break;
             case 3:
+                Intent intent3=new Intent(getActivity(), CaptureActivity.class);
+                startActivity(intent3);
 
                 break;
             case 4:
@@ -86,6 +90,8 @@ public class FindFragment extends Fragment implements AdapterView.OnItemClickLis
 
                 break;
             case 5:
+                Intent intent5=new Intent(getActivity(), CareActivity.class);
+                startActivity(intent5);
 
                 break;
         }

@@ -24,6 +24,9 @@ public class ContactsListGroupActivity extends BaseActivity implements AdapterVi
 
     }
 
+
+
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position){

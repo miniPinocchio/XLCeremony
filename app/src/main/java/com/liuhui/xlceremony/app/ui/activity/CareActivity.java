@@ -14,18 +14,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.liuhui.xlceremony.app.R;
-import com.liuhui.xlceremony.app.adapter.FindPagerAdapter;
+import com.liuhui.xlceremony.app.adapter.CarePagerAdapter;
 
-public class CardActivity extends FragmentActivity implements View.OnClickListener {
+public class CareActivity extends FragmentActivity implements View.OnClickListener {
 
+    //返回按钮
     private ImageView imgBack;
 
     private LinearLayout layout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card);
+        setContentView(R.layout.activity_care);
+
 
         layout= (LinearLayout) findViewById(R.id.kaquan_statusbar);
 
@@ -41,20 +44,20 @@ public class CardActivity extends FragmentActivity implements View.OnClickListen
 
 
 
-        imgBack= (ImageView) findViewById(R.id.card_back);
+        imgBack= (ImageView) findViewById(R.id.care_back);
         imgBack.setOnClickListener(this);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_kaquan);
         TabLayout.Tab tab=tabLayout.newTab();
 
 
-        tabLayout.addTab(tabLayout.newTab().setText("可用卡券"));
-        tabLayout.addTab(tabLayout.newTab().setText("历史卡券"));
+        tabLayout.addTab(tabLayout.newTab().setText("近期话题"));
+        tabLayout.addTab(tabLayout.newTab().setText("精品关怀"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
 
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager_kaquan);
-        final FindPagerAdapter adapter = new FindPagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        final CarePagerAdapter adapter = new CarePagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -76,6 +79,8 @@ public class CardActivity extends FragmentActivity implements View.OnClickListen
         });
 
 
+
+
     }
 
 
@@ -83,8 +88,9 @@ public class CardActivity extends FragmentActivity implements View.OnClickListen
     public void onClick(View v) {
         int id=v.getId();
         switch (id){
-            case R.id.card_back:
+            case R.id.care_back:
                 onBackPressed();
+                break;
         }
     }
 }

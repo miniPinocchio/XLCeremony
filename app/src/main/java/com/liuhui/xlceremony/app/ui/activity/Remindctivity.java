@@ -1,5 +1,6 @@
 package com.liuhui.xlceremony.app.ui.activity;
 
+import android.os.Build;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -7,8 +8,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,11 +31,29 @@ public class Remindctivity extends FragmentActivity implements View.OnClickListe
 
     private TextView txtNew;
 
+    private LinearLayout layout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remindctivity);
+
+
+        layout= (LinearLayout) findViewById(R.id.kaquan_statusbar);
+
+
+        //判断当前SDK版本号，如果是4.4以上，就是支持沉浸式状态栏的
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+        }else{
+            layout.setVisibility(View.GONE);
+        }
+
+
+
+
 
         txtNew= (TextView) findViewById(R.id.find_remind_new);
 
