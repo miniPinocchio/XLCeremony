@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.liuhui.xlceremony.app.AppManager;
+import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.util.LogUtil;
 
 /**
@@ -35,13 +36,32 @@ public abstract class BaseActivity extends AppCompatActivity {
         this.mAllowFullScreen = allowFullScreen;
     }
 
+
+    /**
+     *  新的Activity进入的动画 默认是从右往左，
+     * @return int
+     */
+    protected int getEnterAnimationId(){
+        return R.anim.anim_slide_to_left;
+    }
+
+    /**
+     * 退出时样式，设置的默认是从上往下，
+     * @return  int
+     */
+    protected  int getExitAnimationId(){
+        return R.anim.anim_drop_down;
+    }
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         LogUtil.i("---------onCreate ");
 
-
+        // 从左往右动画
+        overridePendingTransition(getEnterAnimationId(),0);
+        
         // 竖屏锁定
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -85,5 +105,15 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         LogUtil.i("---------onDestroy ");
         AppManager.getAppManager().finishActivity(this);
+    }
+
+    /**
+     * 退出Activity，并且给退出的Activity 指定一个退出动画
+     */
+    @Override
+    public void finish() {
+        super.finish();
+        // 从上往下退出
+        overridePendingTransition(0,getExitAnimationId());
     }
 }

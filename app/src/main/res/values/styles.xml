@@ -90,4 +90,8 @@
         <item name="android:textColor">@color/news_tab_text_color</item>
 
     </style>
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
 </resources>

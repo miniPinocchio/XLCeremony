@@ -7,6 +7,15 @@
               tools:context="com.liuhui.xlceremony.app.ui.activity.CardActivity"
     >
 
+    <LinearLayout
+        android:id="@+id/kaquan_statusbar"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:orientation="vertical"
+        android:background="#DF1135"
+
+        ></LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -22,9 +31,10 @@
 
             />
 
+<!--要给TabLayout设置固定宽度，不然会宽度会占满屏幕，点不到左边的返回箭头了-->
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_kaquan"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             app:tabIndicatorColor="#fff"

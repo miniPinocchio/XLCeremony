@@ -1,5 +1,7 @@
 package com.liuhui.xlceremony.app.util;
 
+import android.os.AsyncTask;
+
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -30,6 +32,7 @@ public class OkHttpUtil {
     public static void enqueue(Request request, Callback responseCallback) {
         mOkHttpClient.newCall(request).enqueue(responseCallback);
     }
+    
 
     /**
      * 开启异步线程访问网络, 且不在意返回结果（实现空callback）
