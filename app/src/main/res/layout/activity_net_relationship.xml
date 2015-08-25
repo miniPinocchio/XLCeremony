@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@color/graylight"
+              tools:context="com.liuhui.xlceremony.app.ui.activity.NetRelationshipActivity"
+        >
+
+    <include layout="@layout/action_bar"/>
+
+    <ListView
+            android:id="@+id/net_list"
+            android:layout_marginTop="20dp"
+            android:dividerHeight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/graylight"
+            android:background="@color/graylight"
+            android:focusable="false"
+            />
+
+
+</LinearLayout>

@@ -14,6 +14,9 @@ import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.ListFriendsViewpagerAdapter;
 import com.liuhui.xlceremony.app.base.BaseFragment;
 import com.liuhui.xlceremony.app.ui.activity.ContactsManagerActivity;
+import com.liuhui.xlceremony.app.ui.activity.NetRelationshipActivity;
+import com.liuhui.xlceremony.app.ui.activity.RelationshipRankActivity;
+import com.liuhui.xlceremony.app.ui.activity.SendToFriendsActivity;
 import com.liuhui.xlceremony.app.util.LogUtil;
 
 import java.util.LinkedList;
@@ -43,6 +46,10 @@ public class RelationshipFragment extends BaseFragment implements ViewPager.OnPa
         LinearLayout impress = (LinearLayout) view.findViewById(R.id.realationship_my_impress_linearlayout);
         LinearLayout rank = (LinearLayout) view.findViewById(R.id.realationship_my_rank_linearlayout);
         LinearLayout scores = (LinearLayout) view.findViewById(R.id.realationship_my_scores_linearlayout);
+
+        impress.getChildAt(0).setOnClickListener(this);
+        rank.getChildAt(0).setOnClickListener(this);
+        scores.getChildAt(0).setOnClickListener(this);
 
         listGroup = (RadioGroup) view.findViewById(R.id.realationship_list_group);
 
@@ -113,8 +120,13 @@ public class RelationshipFragment extends BaseFragment implements ViewPager.OnPa
                 startActivity(new Intent(getActivity(), ContactsManagerActivity.class));
                 break;
             case R.id.relationship_net_picture:
+                startActivity(new Intent(getActivity(), NetRelationshipActivity.class));
                 break;
             case R.id.relationship_group_assistant:
+                startActivity(new Intent(getActivity(), SendToFriendsActivity.class));
+                break;
+            case R.id.my_rank_img:
+                startActivity(new Intent(getActivity(), RelationshipRankActivity.class));
                 break;
         }
     }

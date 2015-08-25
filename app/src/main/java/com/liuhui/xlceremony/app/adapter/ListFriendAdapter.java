@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import com.liuhui.xlceremony.app.R;
 
@@ -27,11 +28,12 @@ public class ListFriendAdapter extends BaseAdapter {
     private Map<String,Integer> alphaIndexer;
     private String [] sections;
     private static final String NAME = "name", NUMBER = "number", SORT_KEY = "sort_key";
+    private View.OnClickListener listener;
 
-
-    public ListFriendAdapter(Context context, List<ContentValues> list) {
+    public ListFriendAdapter(Context context, List<ContentValues> list,View.OnClickListener listener) {
         this.inflater = LayoutInflater.from(context);
         this.list = list;
+        this.listener = listener;
         alphaIndexer = new HashMap<String, Integer>();
         sections = new String[list.size()];
 
@@ -47,6 +49,10 @@ public class ListFriendAdapter extends BaseAdapter {
                 sections[i] = name;
             }
         }
+    }
+
+    public Map<String, Integer> getAlphaIndexer() {
+        return alphaIndexer;
     }
 
     @Override
@@ -73,6 +79,18 @@ public class ListFriendAdapter extends BaseAdapter {
             holder.alpha = (TextView) convertView.findViewById(R.id.alpha);
             holder.name = (TextView) convertView.findViewById(R.id.name);
             holder.number = (TextView) convertView.findViewById(R.id.number);
+            holder.impressTxt = (TextView) convertView.findViewById(R.id.list_friend_impress);
+            holder.scoreTxt = (TextView) convertView.findViewById(R.id.list_friend_score);
+            holder.gift = (ImageView) convertView.findViewById(R.id.list_friend_gift_img);
+            holder.impress = (ImageView) convertView.findViewById(R.id.list_friend_impress_img);
+            holder.score = (ImageView) convertView.findViewById(R.id.list_friend_score_img);
+            holder.personImg = (ImageView) convertView.findViewById(R.id.list_friend_person_img);
+
+            holder.gift.setOnClickListener(listener);
+            holder.impress.setOnClickListener(listener);
+            holder.score.setOnClickListener(listener);
+            holder.personImg.setOnClickListener(listener);
+
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -98,6 +116,13 @@ public class ListFriendAdapter extends BaseAdapter {
         TextView alpha;
         TextView name;
         TextView number;
+        TextView impressTxt;
+        TextView scoreTxt;
+        ImageView gift;
+        ImageView impress;
+        ImageView score;
+        ImageView personImg;
+
     }
     //获得汉语拼音首字母
     private String getAlpha(String str) {

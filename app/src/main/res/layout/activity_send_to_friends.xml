@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.liuhui.xlceremony.app.ui.activity.SendToFriendsActivity"
+        >
+
+    <include layout="@layout/action_bar"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/shape_search_bg"
+            >
+
+        <com.liuhui.xlceremony.app.ui.customview.ClearEditText
+                android:id="@+id/search_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/search_bar_icon_normal"
+                android:background="@drawable/titlebar_search_bg"
+                android:hint="搜索联系人/手机"
+                android:layout_margin="9dp"
+                android:gravity="left|center_vertical"
+                />
+    </RelativeLayout>
+
+    <RadioGroup
+            android:id="@+id/realationship_list_group"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            >
+
+        <RadioButton
+                android:id="@+id/realationship_search_group_button1"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="联系人"
+                android:textSize="25sp"
+                android:button="@null"
+                android:textColor="@drawable/selector_relationship_group"
+                android:gravity="center|center_vertical"
+                android:background="@drawable/selector_radio_button"
+                />
+
+
+        <RadioButton
+                android:id="@+id/realationship_search_group_button2"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="分组"
+                android:button="@null"
+                android:textColor="@drawable/selector_relationship_group"
+                android:gravity="center|center_vertical"
+                android:background="@drawable/selector_radio_button"
+                android:textSize="25sp"
+                />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/search_view_group"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            />
+
+    <Button
+            android:id="@+id/btn_send_to_friends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_login_button"
+            android:text="下一步(12)"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="bottom"
+            />
+
+</LinearLayout>

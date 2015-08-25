@@ -1,11 +1,7 @@
 package com.liuhui.xlceremony.app.util;
 
-import android.app.Application;
 import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
 import android.widget.Toast;
-
 import com.liuhui.xlceremony.app.App;
 
 /**
@@ -15,86 +11,76 @@ import com.liuhui.xlceremony.app.App;
  */
 public class ToastUtil {
 
-	private static Handler handler = new Handler(Looper.getMainLooper());
 
-	private static Toast toast;
-	
+
 	private static Context context;
 
 	public ToastUtil() {
-		
+
 	}
+
 	static {
-		context=new App().getInstance();
+		context = new App().getInstance();
 	}
 
-	static void toast(final Context act, final int msg, final int len) {
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				handler.post(new Runnable() {
-					@Override
-					public void run() {
-						synchronized (ToastUtil.class) {
-							if (toast != null) {
-								toast.cancel();
-								toast.setText(msg);
-								toast.setDuration(len);
-							} else {
-								toast = Toast.makeText(act, msg, len);
-							}
-							toast.show();
-						}
-					}
-				});
-			}
-		}).start();
+	static void toast(Context act, int msg, int len) {
+
+
+		Toast.makeText(act, Integer.toString(msg), len).show();
+
 	}
 
-	public static void toast(final Context act, final String msg, final int len) {
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				handler.post(new Runnable() {
-					@Override
-					public void run() {
-						synchronized (ToastUtil.class) {
-							if (toast != null) {
-								toast.cancel();
-								toast.setText(msg);
-								toast.setDuration(len);
-							} else {
-								toast = Toast.makeText(act, msg, len);
-							}
-							toast.show();
-						}
-					}
-				});
-			}
-		}).start();
+
+	public static void toast(Context act, String msg, int len) {
+
+		Toast.makeText(act, msg, len).show();
+
 	}
 
-	public static void toastShort( final String msg) {
+
+	public static void toastShort(final String msg) {
 		toast(context, msg, Toast.LENGTH_SHORT);
 	}
 
-	public static void toastShort( final int msg) {
+	public static void toastShort(final int msg) {
 		toast(context, msg, Toast.LENGTH_SHORT);
 	}
 
-	public static void toastLong( final String msg) {
+	public static void toastLong(String msg) {
+		toast(context, msg, Toast.LENGTH_LONG);
+
+	}
+
+	public static void toastLong(final int msg) {
 		toast(context, msg, Toast.LENGTH_LONG);
 	}
 
-	public static void toastLong( final int msg) {
-		toast(context, msg, Toast.LENGTH_LONG);
-	}
-	
 
-	public static void cancelCurrentToast() {
-		if (toast != null) {
-			toast.cancel();
-		}
-	}
 }
+
+//	static void toast(final Context act, final int msg, final int len) {
+//		new Thread(new Runnable() {
+//			@Override
+//			public void run() {
+//				handler.post(new Runnable() {
+//					@Override
+//					public void run() {
+//						synchronized (ToastUtil.class) {
+//							if (toast != null) {
+//								toast.cancel();
+//								toast.setText(msg);
+//								toast.setDuration(len);
+//							} else {
+//								toast = Toast.makeText(act, msg, len);
+//							}
+//							toast.show();
+//						}
+//					}
+//				});
+//			}
+//		}).start();
+//	}
+
+
+
 

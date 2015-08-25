@@ -1,28 +1,15 @@
 package com.liuhui.xlceremony.app.ui.fragment;
 
-import android.content.AsyncQueryHandler;
-import android.content.ContentResolver;
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.graphics.PixelFormat;
-import android.net.Uri;
-import android.os.Handler;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.ExpandableListView;
 import com.liuhui.xlceremony.app.R;
-import com.liuhui.xlceremony.app.adapter.ListFriendAdapter;
-import com.liuhui.xlceremony.app.base.BaseFragment;
-import com.liuhui.xlceremony.app.ui.customview.MyLetterListView;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import com.liuhui.xlceremony.app.adapter.PinnedHeaderExpandableAdapter;
+import com.liuhui.xlceremony.app.ui.customview.PinnedHeaderExpandableListView;
 
 /**
  * Created with InetlliJ IDEA.
@@ -31,131 +18,77 @@ import java.util.List;
  * Date 2015/8/20
  * Email:liu594545591@126.com
  */
-public class GroupListFragment extends BaseFragment {
-    private BaseAdapter adapter;
-    private ListView personList;
-    private TextView overlay;
-    private MyLetterListView letterListView;
-    private AsyncQueryHandler asyncQuery;
-    private static final String NAME = "name", NUMBER = "number", SORT_KEY = "sort_key";
-    private HashMap<String, Integer> alphaIndexer;//存放存在的汉语拼音首字母和与之对应的列表位置
-    private String[] sections;//存放存在的汉语拼音首字母
-    private Handler handler;
-    private OverlayThread overlayThread;
+public class GroupListFragment extends Fragment {
+
+    private PinnedHeaderExpandableListView explistview;
+    private String[][] childrenData = new String[10][10];
+    private String[] groupData = {"朋友","同事","家人","孩子","幼儿园","小学","初中","大学","高中","就业"};
+    private int expandFlag = -1;//控制列表的展开
+    private PinnedHeaderExpandableAdapter adapter;
 
 
+    @Nullable
     @Override
-    public View initView(LayoutInflater inflater, ViewGroup container) {
-        View view = inflater.inflate(
-                R.layout.fragment_relationship_list_friends, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_list_group, container, false);
 
-        personList = (ListView) view.findViewById(R.id.list_view);
-        letterListView = (MyLetterListView) view.findViewById(R.id.MyLetterListView01);
-        letterListView.setOnTouchingLetterChangedListener(new LetterListViewListener());
 
-        asyncQuery = new MyAsyncQueryHandler(getActivity().getContentResolver());
-        alphaIndexer = new HashMap<String, Integer>();
-        handler = new Handler();
-        overlayThread = new OverlayThread();
-        initOverlay();
+        initView(view);
+        initData();
         return view;
     }
 
-    //初始化汉语拼音首字母弹出提示框
-    private void initOverlay() {
-        Uri uri = Uri.parse("content://com.android.contacts/data/phones");
-        String[] projection = {"_id", "display_name", "data1", "sort_key"};
-        asyncQuery.startQuery(0, null, uri, projection, null, null,
-                "sort_key COLLATE LOCALIZED asc");
-        LayoutInflater inflater = LayoutInflater.from(getActivity());
-        overlay = (TextView) inflater.inflate(R.layout.relationship_list_friends_overlay,
-                null);
-        overlay.setVisibility(View.INVISIBLE);
-        WindowManager.LayoutParams lp = new WindowManager.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.TYPE_APPLICATION,
-                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-                        | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-                PixelFormat.TRANSLUCENT);
-        WindowManager windowManager = (WindowManager) getActivity().getSystemService(Context.WINDOW_SERVICE);
-        windowManager.addView(overlay, lp);
+    /**
+     * 初始化VIEW
+     */
+    private void initView(View view) {
+        explistview = (PinnedHeaderExpandableListView) view.findViewById(R.id.explistview);
     }
 
-    private void setAdapter(List<ContentValues> list) {
-        adapter = new ListFriendAdapter(getActivity(), list);
-        personList.setAdapter(adapter);
-
-    }
-
-    @Override
-    public void initData() {
-
-    }
+    /**
+     * 初始化数据
+     */
+    private void initData() {
 
 
-    private class LetterListViewListener implements MyLetterListView.OnTouchingLetterChangedListener {
-
-        @Override
-        public void onTouchingLetterChanged(final String s) {
-            if (alphaIndexer.get(s) != null) {
-                int position = alphaIndexer.get(s);
-                personList.setSelection(position);
-                overlay.setText(sections[position]);
-                overlay.setVisibility(View.VISIBLE);
-                handler.removeCallbacks(overlayThread);
-                //延迟一秒后执行，让overlay为不可见
-                handler.postDelayed(overlayThread, 1500);
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                childrenData[i][j] = "好友" + i + "-" + j;
             }
         }
+        //设置悬浮头部VIEW
+        explistview.setHeaderView(getActivity().getLayoutInflater().inflate(R.layout.fragment_list_group_head,
+                explistview, false));
+        adapter = new PinnedHeaderExpandableAdapter(childrenData, groupData, getActivity().getApplicationContext(), explistview);
+        explistview.setAdapter(adapter);
 
+        //设置单个分组展开
+        explistview.setOnGroupClickListener(new GroupClickListener());
     }
 
-    //查询联系人
-    private class MyAsyncQueryHandler extends AsyncQueryHandler {
-
-        public MyAsyncQueryHandler(ContentResolver cr) {
-            super(cr);
-
-        }
-
+    class GroupClickListener implements ExpandableListView.OnGroupClickListener {
         @Override
-        protected void onQueryComplete(int token, Object cookie, Cursor cursor) {
-            if (cursor != null && cursor.getCount() > 0) {
-                List<ContentValues> list = new ArrayList<ContentValues>();
-                cursor.moveToFirst();
-                for (int i = 0; i < cursor.getCount(); i++) {
-                    ContentValues cv = new ContentValues();
-                    cursor.moveToPosition(i);
-                    String name = cursor.getString(1);
-                    String number = cursor.getString(2);
-                    String sortKey = cursor.getString(3);
-                    if (number.startsWith("+86")) {
-                        cv.put(NAME, name);
-                        cv.put(NUMBER, number.substring(3));  //去掉+86
-                        cv.put(SORT_KEY, sortKey);
-                    } else {
-                        cv.put(NAME, name);
-                        cv.put(NUMBER, number);
-                        cv.put(SORT_KEY, sortKey);
-                    }
-                    list.add(cv);
-                }
-                if (list.size() > 0) {
-                    setAdapter(list);
-                }
+        public boolean onGroupClick(ExpandableListView parent, View v,
+                                    int groupPosition, long id) {
+            if (expandFlag == -1) {
+                // 展开被选的group
+                explistview.expandGroup(groupPosition);
+                // 设置被选中的group置于顶端
+                explistview.setSelectedGroup(groupPosition);
+                expandFlag = groupPosition;
+            } else if (expandFlag == groupPosition) {
+                explistview.collapseGroup(expandFlag);
+                expandFlag = -1;
+            } else {
+                explistview.collapseGroup(expandFlag);
+                // 展开被选的group
+                explistview.expandGroup(groupPosition);
+                // 设置被选中的group置于顶端
+                explistview.setSelectedGroup(groupPosition);
+                expandFlag = groupPosition;
             }
+            return true;
         }
-
     }
 
-
-    //设置overlay不可见
-    private class OverlayThread implements Runnable {
-
-        @Override
-        public void run() {
-            overlay.setVisibility(View.GONE);
-        }
-
-    }
 }
