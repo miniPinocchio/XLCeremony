@@ -25,14 +25,12 @@ public class NetRelationshipAdapter extends BaseAdapter {
     private String[] strings = {"最亲密排名", "志趣相投排名", "可能认识"};
     private View.OnClickListener listener;
 
-    public NetRelationshipAdapter(ArrayList<ArrayList<HashMap<String, Object>>> mList, Context mContext) {
+    public NetRelationshipAdapter(ArrayList<ArrayList<HashMap<String, Object>>> mList, Context mContext,View.OnClickListener listener) {
         this.mList = mList;
         this.mContext = mContext;
-    }
-
-    public void setListener(View.OnClickListener listener) {
         this.listener = listener;
     }
+
 
     @Override
     public int getCount() {
@@ -70,9 +68,9 @@ public class NetRelationshipAdapter extends BaseAdapter {
             }
             if (holder.gridView != null) {
                 ArrayList<HashMap<String, Object>> arrayListForEveryGridView = mList.get(position);
-                NetGridViewAdapter gridViewAdapter=new NetGridViewAdapter(arrayListForEveryGridView,mContext);
+                NetGridViewAdapter gridViewAdapter=new
+                        NetGridViewAdapter(arrayListForEveryGridView, mContext, listener,position);
                 holder.gridView.setAdapter(gridViewAdapter);
-                gridViewAdapter.setListener(listener);
             }
         }
         return convertView;
