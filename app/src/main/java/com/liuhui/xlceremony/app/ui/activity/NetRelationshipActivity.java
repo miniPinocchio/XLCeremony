@@ -5,6 +5,7 @@ import android.graphics.BitmapFactory;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.NetRelationshipAdapter;
 import com.liuhui.xlceremony.app.base.BaseActivity;
@@ -30,12 +31,14 @@ public class NetRelationshipActivity extends BaseActivity implements View.OnClic
     private void init() {
 
         ImageView back = (ImageView) findViewById(R.id.back);
+        TextView title = (TextView) findViewById(R.id.actionBarTitle);
         mListView = (ListView) findViewById(R.id.net_list);
         initData();
 
         back.setOnClickListener(this);
         adapter = new NetRelationshipAdapter(mArrayList, this,this);
         mListView.setAdapter(adapter);
+        title.setText("排行榜");
     }
 
     private void initData() {
@@ -71,7 +74,7 @@ public class NetRelationshipActivity extends BaseActivity implements View.OnClic
 
         switch (v.getId()) {
             case R.id.back:
-                NetRelationshipActivity.this.finish();
+                finish();
                 break;
             case R.id.net_grid_img:
                 int []tag = (int[])v.getTag();

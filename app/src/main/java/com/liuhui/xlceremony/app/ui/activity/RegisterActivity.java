@@ -150,11 +150,12 @@ public class RegisterActivity extends BaseActivity {
             return;
         }
 
+        //TODO 暂时为手机号参数
         RequestBody requestBody = new FormEncodingBuilder()
                 .add(RequestParam.MOBILE, strMobilePhone)
-                .add(RequestParam.PASSWORD, strPassword)
-                .add(RequestParam.AUTH_CODE, strAuthCode)
-                .build();
+                .add(RequestParam.SMS_CONTENT, strPassword).build();
+//                .add(RequestParam.AUTH_CODE, strAuthCode)
+//                .build();
 
         Request loginRequest = new Request.Builder()
                 .url(Api.REGISTER)
