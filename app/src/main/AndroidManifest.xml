@@ -48,6 +48,7 @@
             android:name=".ui.activity.PhotoActivity"
             android:label="@string/title_activity_photo" >
         </activity>
+        <activity android:name=".ui.activity.NetRelationshipActivity"/>
         <activity
             android:name=".ui.activity.Remindctivity"
             android:label="@string/title_activity_remindctivity" >
@@ -60,6 +61,31 @@
             android:name=".ui.activity.CardActivity"
             android:label="@string/title_activity_card" >
         </activity>
+        <activity
+            android:name=".ui.activity.PersonalActivity"
+            android:label="@string/title_activity_personal" >
+        </activity>
+        <activity
+            android:name=".ui.activity.SettingActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name=".ui.activity.SettingSafeActivity"
+            android:label="@string/title_activity_setting_safe" >
+        </activity>
+        <activity
+            android:name=".ui.activity.SettingSafePhoneActivity"
+            android:label="@string/title_activity_setting_safe_phone" >
+        </activity>
+        <activity
+            android:name=".ui.activity.PresentRecorderActivity"
+            android:label="@string/title_activity_present_recorder" >
+        </activity>
+        <activity
+            android:name=".ui.activity.SettingSafeEmailActivity"
+            android:label="@string/title_activity_setting_safe_email" >
+        </activity>
+
     </application>
 
 </manifest>
