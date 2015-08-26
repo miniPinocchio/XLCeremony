@@ -1,9 +1,28 @@
 <resources>
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_login_fragment">LoginFragment</string>
+
+    <string name="me_title">我</string>
+    <string name="personal_title">个人信息</string>
+    <string name="setting_title">设置</string>
+    <string name="setting_safe_title">安全设置</string>
+    <string name="setting_safe_edit_phone_title">更改手机设置</string>
+    <string name="present_recorder_title">我的提醒</string>
+    <string name="edit">编辑</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_test_zy">TestZYActivity</string>
+    <string name="title_activity_personal">PersonalActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="title_activity_setting_safe">SettingSafeActivity</string>
+    <string name="title_activity_setting_safe_phone">SettingSafePhoneActivity</string>
+    <string name="title_activity_present_record">PresentRecord</string>
+    <string name="title_activity_present_recorder">PresentRecorderActivity</string>
+    <string name="title_activity_setting_safe_email">SettingSafeEmailActivity</string>
 
     <string name="app_name">晓礼</string>
 
@@ -26,7 +45,7 @@
     <string name="register_title">账号注册</string>
     <string name="title_activity_register_fragment">RegisterFragment</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_forget_password">忘记密码</string>
     <string name="confirm">确定</string>
