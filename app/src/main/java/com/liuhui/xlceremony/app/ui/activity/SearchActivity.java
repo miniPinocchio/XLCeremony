@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import com.liuhui.xlceremony.app.R;
 
-public class SerachActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity {
 
     private ListView mListView;
     private String userInput;

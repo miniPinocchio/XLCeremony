@@ -3,7 +3,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                tools:context="com.liuhui.xlceremony.app.ui.activity.SerachActivity">
+                tools:context="com.liuhui.xlceremony.app.ui.activity.SearchActivity">
         <include layout="@layout/action_bar"/>
         <include layout="@layout/activity_serach_head"/>
         <include layout="@layout/activity_serach_body"/>

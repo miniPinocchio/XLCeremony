@@ -3,7 +3,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/shape_search_bg"
-                tools:context="com.liuhui.xlceremony.app.ui.activity.SerachActivity">
+                tools:context="com.liuhui.xlceremony.app.ui.activity.SearchActivity">
     <EditText
         android:id="@+id/stategy_serach_key"
         android:layout_width="match_parent"
