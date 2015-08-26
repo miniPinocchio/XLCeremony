@@ -2,27 +2,17 @@ package com.liuhui.xlceremony.app.ui.fragment;
 
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentTabHost;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TabHost;
-import android.widget.TextView;
-
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.StategyListAdapter;
-import com.liuhui.xlceremony.app.adapter.StategytabAdapter;
 import com.liuhui.xlceremony.app.base.BaseFragment;
-import com.liuhui.xlceremony.app.bean.Stategy.StategyHead;
-import com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment1;
-import com.liuhui.xlceremony.app.ui.fragment.substategyfragment.Fragment2;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;

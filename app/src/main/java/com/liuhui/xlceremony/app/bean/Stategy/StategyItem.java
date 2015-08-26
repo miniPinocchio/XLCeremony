@@ -3,8 +3,6 @@ package com.liuhui.xlceremony.app.bean.Stategy;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.List;
-
 /**
  * Created by Ziv on Android Studio
  * com.liuhui.xlceremony.app.bean

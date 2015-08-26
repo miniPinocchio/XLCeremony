@@ -3,12 +3,7 @@ package com.liuhui.xlceremony.app.ui.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
-
 import com.liuhui.xlceremony.app.R;
-
-import java.util.ArrayList;
-import java.util.List;
-import android.text.Html;
 
 public class SerachActivity extends AppCompatActivity {
 
