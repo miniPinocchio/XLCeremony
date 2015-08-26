@@ -53,6 +53,10 @@
             android:label="@string/title_activity_remindctivity" >
         </activity>
         <activity
+            android:name=".ui.activity.SerachActivity"
+            android:label="@string/title_activity_serach" >
+        </activity>
+        <activity
             android:name=".ui.activity.SmsActivity"
             android:label="@string/title_activity_sms" >
         </activity>
