@@ -9,6 +9,7 @@
         android:background="@mipmap/image"
         />
     <TextView
+        android:id="@+id/stategy_vertical_item_love"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableLeft="@mipmap/ic_launcher"
@@ -19,6 +20,7 @@
         android:background="@drawable/shape_stategy_love_button"
         />
     <TextView
+        android:id="@+id/stategy_vertical_item_txt"
         android:layout_alignBottom="@id/stategy_vertical_item_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,7 +35,9 @@
         android:layout_below="@id/stategy_vertical_item_image"
         android:layout_alignRight="@id/stategy_vertical_item_image"
         >
+        <!-- 回复 浏览 分享 收藏-->
         <TextView
+            android:id="@+id/stategy_vertical_item_respond"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@mipmap/ic_launcher"
@@ -41,6 +45,7 @@
             android:text="23"
             />
         <TextView
+            android:id="@+id/stategy_vertical_item_browse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@mipmap/ic_launcher"
@@ -48,6 +53,7 @@
             android:text="23"
             />
         <TextView
+            android:id="@+id/stategy_vertical_item_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@mipmap/ic_launcher"
@@ -55,6 +61,7 @@
             android:text="23"
             />
         <TextView
+            android:id="@+id/stategy_vertical_item_collection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@mipmap/ic_launcher"

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.liuhui.xlceremony.app"
-        >
-
-    <uses-permission android:name="android.permission.INTERNET"/>
+    package="com.liuhui.xlceremony.app" >
+    
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -20,66 +18,50 @@
             android:theme="@style/BaseAppTheme_Light"
             >
         <activity
-                android:name=".MainActivity"
-                android:label="@string/app_name"
-                >
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
         </activity>
         <activity
-                android:name=".ui.activity.LoginSecondActivity"
-                android:label="@string/title_activity_login"
-                >
+            android:name=".ui.activity.LoginSecondActivity"
+            android:label="@string/title_activity_login" >
         </activity>
         <activity
-                android:name=".ui.activity.SplashActivity"
-                android:label="@string/title_activity_splash"
-                >
+            android:name=".ui.activity.SplashActivity"
+            android:label="@string/title_activity_splash" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.SendToFriendsActivity"/>
-        <activity android:name=".ui.activity.RelationshipRankActivity"/>
-        <activity android:name=".ui.activity.RegisterActivity"/>
-        <activity android:name=".ui.activity.ForgetPassword"/>
-        <activity android:name=".ui.activity.NetRelationshipActivity"/>
-        <activity android:name=".ui.activity.ContactsManagerActivity"/>
-        <activity android:name=".ui.activity.PhotoActivity"/>
-        <activity android:name=".ui.activity.Remindctivity"/>
-        <activity android:name=".ui.activity.SmsActivity"/>
-        <activity android:name=".ui.activity.CardActivity"/>
         <activity
-                android:name=".ui.activity.PersonalActivity"
-                android:label="@string/title_activity_personal"
-                >
+            android:name=".ui.activity.RegisterActivity"
+            android:label="@string/title_activity_register_fragment" >
         </activity>
         <activity
-                android:name=".ui.activity.SettingActivity"
-                android:label="@string/title_activity_setting"
-                >
+            android:name=".ui.activity.ForgetPassword"
+            android:label="@string/title_activity_forget_password" >
         </activity>
         <activity
-                android:name=".ui.activity.SettingSafeActivity"
-                android:label="@string/title_activity_setting_safe"
-                >
+            android:name=".ui.activity.ContactsManagerActivity"
+            android:label="@string/title_activity_contacts_manager" >
         </activity>
         <activity
-                android:name=".ui.activity.SettingSafePhoneActivity"
-                android:label="@string/title_activity_setting_safe_phone"
-                >
+            android:name=".ui.activity.PhotoActivity"
+            android:label="@string/title_activity_photo" >
         </activity>
         <activity
-                android:name=".ui.activity.PresentRecorderActivity"
-                android:label="@string/title_activity_present_recorder"
-                >
+            android:name=".ui.activity.Remindctivity"
+            android:label="@string/title_activity_remindctivity" >
         </activity>
         <activity
-                android:name=".ui.activity.SettingSafeEmailActivity"
-                android:label="@string/title_activity_setting_safe_email"
-                >
+            android:name=".ui.activity.SmsActivity"
+            android:label="@string/title_activity_sms" >
         </activity>
-
+        <activity
+            android:name=".ui.activity.CardActivity"
+            android:label="@string/title_activity_card" >
+        </activity>
     </application>
 
 </manifest>
