@@ -1,18 +1,12 @@
 package com.liuhui.xlceremony.app.ui.activity;
 
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.liuhui.xlceremony.app.R;
-import com.liuhui.xlceremony.app.base.BaseActivity;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import com.liuhui.xlceremony.app.R;
+import com.liuhui.xlceremony.app.base.BaseActivity;
 
 
 public class SettingSafeEmailActivity extends BaseActivity implements View.OnClickListener {

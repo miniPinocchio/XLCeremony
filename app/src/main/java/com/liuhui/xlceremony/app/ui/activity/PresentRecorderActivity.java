@@ -6,7 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.FragmentStateAdapter;
 import com.liuhui.xlceremony.app.base.BaseActivity;
@@ -15,9 +16,6 @@ import com.liuhui.xlceremony.app.util.BlankBFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 
 public class PresentRecorderActivity extends BaseActivity implements View.OnClickListener, 

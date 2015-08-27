@@ -1,18 +1,12 @@
 package com.liuhui.xlceremony.app.ui.activity;
 
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.liuhui.xlceremony.app.R;
-import com.liuhui.xlceremony.app.base.BaseActivity;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import com.liuhui.xlceremony.app.R;
+import com.liuhui.xlceremony.app.base.BaseActivity;
 
 
 public class SettingSafePhoneActivity extends BaseActivity implements View.OnClickListener {

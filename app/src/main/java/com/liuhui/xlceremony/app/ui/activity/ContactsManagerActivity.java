@@ -3,12 +3,13 @@ package com.liuhui.xlceremony.app.ui.activity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.base.BaseActivity;
 import com.liuhui.xlceremony.app.util.ToastUtil;
 
-public class ContactsManagerActivity extends BaseActivity implements AdapterView.OnItemClickListener {
+public class ContactsManagerActivity extends BaseActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
 
     private String[] contacts = new String[]{"家人(32)", "朋友(62)", "同学(32)", "同事(62)"};
 
@@ -16,11 +17,15 @@ public class ContactsManagerActivity extends BaseActivity implements AdapterView
     protected void initViews() {
         setContentView(R.layout.activity_contacts_manager);
         ListView listView = (ListView) findViewById(R.id.contacts_manager);
+        ImageView back = (ImageView) findViewById(R.id.back);
+
+
         ArrayAdapter adapter = new ArrayAdapter(this, R.layout.relationship_contacts_manager_item
                 , R.id.contacts_manager_txt, contacts);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(this);
+        back.setOnClickListener(this);
 
     }
 
@@ -42,5 +47,10 @@ public class ContactsManagerActivity extends BaseActivity implements AdapterView
                 break;
 
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        finish();
     }
 }

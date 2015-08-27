@@ -1,6 +1,7 @@
 package com.liuhui.xlceremony.app.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.liuhui.xlceremony.app.R;
-import com.liuhui.xlceremony.app.util.ToastUtil;
 
 import java.util.HashMap;
 import java.util.List;
@@ -29,14 +29,15 @@ public class NetGridViewAdapter extends BaseAdapter {
     private Context context;
     private int positionM;
 
-    public NetGridViewAdapter(List<HashMap<String, Object>> lists, Context context) {
+    public NetGridViewAdapter(List<HashMap<String, Object>> lists, Context context,View.OnClickListener listener
+    ,int position) {
         this.lists = lists;
         this.context = context;
+        this.listener = listener;
+        this.positionM = position;
     }
 
-    public void setListener(View.OnClickListener listener) {
-        this.listener = listener;
-    }
+
 
     @Override
     public int getCount() {
@@ -72,17 +73,11 @@ public class NetGridViewAdapter extends BaseAdapter {
         if (this.lists != null) {
             HashMap<String, Object> hashMap = lists.get(position);
             if (holder.personImg != null) {
-                holder.personImg.setImageResource(R.mipmap.ic_launcher);
+                holder.personImg.setImageBitmap((Bitmap) hashMap.get("personImg"));
                 holder.personImg.setOnClickListener(listener);
-                holder.personName.setText("小王");
-                positionM = position;
-                holder.personImg.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ToastUtil.toastLong("第" + (positionM + 1) + "个");
-                    }
-                });
+                holder.personImg.setTag(new int[]{positionM, position});
             }
+                holder.personName.setText(hashMap.get("personName").toString());
         }
         return convertView;
     }

@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/shape_search_bg"
+                tools:context="com.liuhui.xlceremony.app.ui.activity.SearchActivity">
+    <EditText
+        android:id="@+id/stategy_serach_key"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/titlebar_search_bg"
+        android:layout_margin="9dp"
+        />
+    <View
+        android:id="@+id/stategy_serach_btn_go"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_alignLeft="@id/stategy_serach_key"
+        android:layout_alignTop="@id/stategy_serach_key"
+        android:layout_alignBottom="@id/stategy_serach_key"
+        android:layout_marginLeft="3dp"
+        android:background="@drawable/search_bar_icon_normal"/>
+</RelativeLayout>

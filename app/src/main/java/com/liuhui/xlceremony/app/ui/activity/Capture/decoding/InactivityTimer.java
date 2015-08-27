@@ -18,11 +18,7 @@ package com.liuhui.xlceremony.app.ui.activity.Capture.decoding;
 
 import android.app.Activity;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * Finishes an activity after a period of inactivity.

@@ -1,0 +1,142 @@
+TODO 9-3 批量添加好友 11 返回错误(参数)
+
+
+
+
+
+
+2.注册
+http://xl.wx.21future.com/index.php?s=appapi&a=reg
+post:mobile 18007770951  
+     password xiayu215 
+     pincode 1147 
+     nickname 18007770951
+return:成功：{"status":"1","userid":"1","mobile":"1809990988","data":"注册成功！"}
+       成功：{"status":"1","data":"手机号已被注册！"}
+       失败：{"status":"0","data":"注册失败！"}
+       
+3.登录
+http://xl.wx.21future.com/index.php?s=appapi&a=login
+post:mobile 18007770951  
+     password xiayu215
+return:成功：{"status":"1","userid":"1","mobile":"1809990988","data":"登录成功！"}
+       失败：{"status":"0","data":"登录失败！"}
+       
+4.手机验证码
+http://xl.wx.21future.com/index.php?s=appapi&a=pin
+post:mobile 18007770951 
+return:成功:{"mobile":"18007770951","optime":"1440557978","pincode":"1193"}
+
+5.密码重置
+http://xl.wx.21future.com/index.php?s=appapi&a=repassword
+post:mobile 18007770951  
+     password xiayu215 
+     pincode 1147 
+return:成功：{"status":"1","data":"设置成功！"}
+       失败：{"status":"0","data":"设置失败！"}
+       
+6.通讯录
+http://xl.wx.21future.com/index.php?s=appapi&a=friends
+post:uid 1
+return:{"friends":[ { "userid":"1", "friendsid":"2",
+       		  "remname":"大帽","remdesc":"好了开始",
+       		  "mobile":"18002220325", "nickname":"",
+       		  "groupid":"10", "groupname":"亲密好友",
+       		  "avatar":"/a/u_12563.jpg", "grade":"20",
+       		  "impress":"0"}]，
+           "grouplist":[ { "groupid":"1","groupname":"密友"}]，
+           "userinfo":[ {"id":"2","username":"feiyue",nickname":"xiaoyu", "grade":"8", "impress":"20","ranking":"0"}]，
+           "listsize":"1"
+       }
+       
+7.导入通讯录
+http://xl.wx.21future.com/index.php?s=appapi&a=addBatchFriends
+post:[{"uid":1,"gid":2,"mobile":"13522804920","remname":"耗子","remdesc":"一起长大的哥们"},
+     {"uid":1,"gid":2,"mobile":"13522804930","remname":"张昭","remdesc":"还记得我们掏的鸟窝吗"}]
+return:[{"ret":"0","data":"缺少参数"}]
+
+8.打分
+8.1列表
+http://xl.wx.21future.com/index.php?s=appapi&a=grade
+post:mobile 18007770951 
+return:{"list":[{"id":"2","grade":"82", "userid":"2",
+       		  "avatar":"","nickname":"xiaoyu",
+       		  "mobile":"18007770951", "praisenum":"102"
+       		  "commentnum":"172" } ],
+       "entry":[{"id":"5","title":"聪明","status":"1"}]
+       }
+
+8.2添加
+http://xl.wx.21future.com/index.php?s=appapi&a=addgrade
+post:uid 1
+     grade [{"grade":"10"},{"grade":"7"},{"grade":"9"},{"grade":"9"},{"grade":"8"}]
+     mobile 18007770951
+return:成功：{"status":"1","data":"打分成功！"}
+       失败：{"status":"0","data":"不能重复打！"}
+       失败：{"status":"0","data":"打分失败！"}
+
+8.3词条列表
+http://xl.wx.21future.com/index.php?s=appapi&a=entry
+post:无
+return:{"entrylist":[{"id":"1","title":"很好啊","status":"1"}]}
+
+9.印象
+9.1列表
+http://xl.wx.21future.com/index.php?s=appapi&a=impress
+post:mobile 18007770951 
+     uid 1
+return:{ "list":[{"id":"2",
+       		  "impress":{0:{"id":"53","impress":"很时尚","impressnum":"1"},1:{}......},//自己请求看
+       		  "userid":"1", "avatar":"/4/U_dl940.jpg",
+       		  "nickname":"大兵","mobile","18007770951",
+       		  "praisenum":"5","commentnum":"5",}], 
+           "replist":[ {"impress":"萌萌哒", }] 
+           }
+9.2添加
+http://xl.wx.21future.com/index.php?s=appapi&a=addimpress
+post:mobile 18007770951 
+     uid 1
+     impress [{"impress":"帅气"},{"impress":"聪明"},{"impress ":"活泼"},{"impress":"潮男"}]
+return:成功：{"status":"1","data":"添加印象成功！"}
+       失败：{"status":"0","data":"添加印象失败！"}
+
+9.3批量添加
+http://xl.wx.21future.com/index.php?s=appapi&a= addBatchImpress
+post:data [{"uid":24,"mobile":"18007770951","impress":"强壮的","anonymous":0},
+           {"uid":24,"mobile":"13522804920","impress":"潮男","anonymous":0},
+           {"uid":1,"mobile":"18007770951","impress":"时尚","anonymous":0}]
+return:400 Error
+
+10.点赞
+10.1列表
+http://xl.wx.21future.com/index.php?s=appapi&a=praise
+post:pid 1 
+     tid 1
+return:{"praiselist":[{"id":"2","userid":"xiaoyu","upid":"1",
+       		          "typeid":"2",  "praisetime":"140303903", 
+       		          "nickname":"dabin","avatar":"/6/u_d098d.jpg"}]
+       }
+
+10.2添加
+http://xl.wx.21future.com/index.php?s=appapi&a=addpraise
+post:pid 1
+     tid 1
+     uid 1
+return:成功：{"status":"1","data":"点赞成功！"}
+       成功：{"status":"1","data":"不能重复点赞！"}
+       失败：{"status":"0","data":"点赞失败！"}
+
+
+
+
+
+
+
+
+
+
+     
+     
+
+
+

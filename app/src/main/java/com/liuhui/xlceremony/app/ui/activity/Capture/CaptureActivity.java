@@ -1,6 +1,5 @@
 package com.liuhui.xlceremony.app.ui.activity.Capture;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,20 +11,17 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
-
-import android.os.Bundle;
-
 import android.support.v4.app.FragmentActivity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
 import android.view.WindowManager;
-
-
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
+import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.ui.activity.Capture.camera.CameraManager;
 import com.liuhui.xlceremony.app.ui.activity.Capture.decoding.CaptureActivityHandler;
 import com.liuhui.xlceremony.app.ui.activity.Capture.decoding.InactivityTimer;
@@ -33,8 +29,6 @@ import com.liuhui.xlceremony.app.ui.activity.Capture.view.ViewfinderView;
 
 import java.io.IOException;
 import java.util.Vector;
-
-import com.liuhui.xlceremony.app.R;
 
 public class CaptureActivity extends FragmentActivity implements Callback{
 

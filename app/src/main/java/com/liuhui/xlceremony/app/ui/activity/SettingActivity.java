@@ -2,21 +2,15 @@ package com.liuhui.xlceremony.app.ui.activity;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
-
+import android.widget.*;
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.base.BaseActivity;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-
-import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class SettingActivity extends BaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 

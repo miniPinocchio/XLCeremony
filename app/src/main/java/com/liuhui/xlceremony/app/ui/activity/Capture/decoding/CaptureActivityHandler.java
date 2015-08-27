@@ -24,20 +24,16 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
-import com.liuhui.xlceremony.app.ui.activity.Capture.CaptureActivity;
-
-
-//import com.liuhui.xlceremony.app.ui.activity.Capture.R;
 import com.liuhui.xlceremony.app.R;
-
-
+import com.liuhui.xlceremony.app.ui.activity.Capture.CaptureActivity;
 import com.liuhui.xlceremony.app.ui.activity.Capture.camera.CameraManager;
-import com.liuhui.xlceremony.app.ui.activity.Capture.view.*;
+import com.liuhui.xlceremony.app.ui.activity.Capture.view.ViewfinderResultPointCallback;
 
 import java.util.Vector;
+
+//import com.liuhui.xlceremony.app.ui.activity.Capture.R;
 
 /**
  * This class handles all the messaging which comprises the state machine for capture.

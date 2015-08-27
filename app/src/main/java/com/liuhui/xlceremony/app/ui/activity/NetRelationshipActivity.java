@@ -5,9 +5,11 @@ import android.graphics.BitmapFactory;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.NetRelationshipAdapter;
 import com.liuhui.xlceremony.app.base.BaseActivity;
+import com.liuhui.xlceremony.app.ui.customview.DialogAddFriend;
 import com.liuhui.xlceremony.app.util.ToastUtil;
 
 import java.util.ArrayList;
@@ -29,13 +31,14 @@ public class NetRelationshipActivity extends BaseActivity implements View.OnClic
     private void init() {
 
         ImageView back = (ImageView) findViewById(R.id.back);
+        TextView title = (TextView) findViewById(R.id.actionBarTitle);
         mListView = (ListView) findViewById(R.id.net_list);
         initData();
 
         back.setOnClickListener(this);
-        adapter = new NetRelationshipAdapter(mArrayList, this);
-        adapter.setListener(this);
+        adapter = new NetRelationshipAdapter(mArrayList, this,this);
         mListView.setAdapter(adapter);
+        title.setText("排行榜");
     }
 
     private void initData() {
@@ -43,7 +46,7 @@ public class NetRelationshipActivity extends BaseActivity implements View.OnClic
         HashMap<String, Object> hashMap = null;
         ArrayList<HashMap<String, Object>> arrayListForEveryGridView;
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.personal_picutre);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.github);
 
         for (int i = 0; i < 3; i++) {
             arrayListForEveryGridView = new ArrayList<HashMap<String, Object>>();
@@ -71,11 +74,13 @@ public class NetRelationshipActivity extends BaseActivity implements View.OnClic
 
         switch (v.getId()) {
             case R.id.back:
-                NetRelationshipActivity.this.finish();
+                finish();
                 break;
             case R.id.net_grid_img:
-                //TODO 跳转个人信息并显示
-                ToastUtil.toastLong("是否加好友");
+                int []tag = (int[])v.getTag();
+                ToastUtil.toastLong("listview"+tag[0]+"gridview"+tag[1]);
+                DialogAddFriend addFriend = new DialogAddFriend(this);
+                addFriend.setMessage(mArrayList.get(tag[0]).get(tag[1]).toString());
         }
 
     }

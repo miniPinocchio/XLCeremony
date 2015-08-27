@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
-
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.FindCareAdapter1;
 import com.liuhui.xlceremony.app.bean.CareItem;

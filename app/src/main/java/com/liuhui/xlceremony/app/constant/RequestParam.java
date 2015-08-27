@@ -25,4 +25,9 @@ public interface RequestParam {
      * 所用场景：注册
      */
     String AUTH_CODE = "pincode";
+
+    /**
+     * 短信内容
+     */
+    String SMS_CONTENT = "您的验证码：2356";
 }

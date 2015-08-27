@@ -17,7 +17,6 @@
 package com.liuhui.xlceremony.app.ui.activity.Capture.camera;
 
 import android.graphics.Bitmap;
-
 import com.google.zxing.LuminanceSource;
 
 /**

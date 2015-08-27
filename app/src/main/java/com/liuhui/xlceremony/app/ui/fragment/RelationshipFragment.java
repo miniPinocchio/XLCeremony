@@ -13,10 +13,7 @@ import android.widget.RadioGroup;
 import com.liuhui.xlceremony.app.R;
 import com.liuhui.xlceremony.app.adapter.ListFriendsViewpagerAdapter;
 import com.liuhui.xlceremony.app.base.BaseFragment;
-import com.liuhui.xlceremony.app.ui.activity.ContactsManagerActivity;
-import com.liuhui.xlceremony.app.ui.activity.NetRelationshipActivity;
-import com.liuhui.xlceremony.app.ui.activity.RelationshipRankActivity;
-import com.liuhui.xlceremony.app.ui.activity.SendToFriendsActivity;
+import com.liuhui.xlceremony.app.ui.activity.*;
 import com.liuhui.xlceremony.app.util.LogUtil;
 
 import java.util.LinkedList;
@@ -127,6 +124,12 @@ public class RelationshipFragment extends BaseFragment implements ViewPager.OnPa
                 break;
             case R.id.my_rank_img:
                 startActivity(new Intent(getActivity(), RelationshipRankActivity.class));
+                break;
+            case R.id.my_impress_img:
+                startActivity(new Intent(getActivity(), SearchActivity.class));
+                break;
+            case R.id.my_score_img:
+
                 break;
         }
     }

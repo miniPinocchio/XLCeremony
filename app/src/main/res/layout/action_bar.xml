@@ -18,6 +18,15 @@
             android:src="@mipmap/icon_back"/>
 
     <TextView
+            android:id="@+id/actionBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:text="sss"
+            android:textSize="18sp"/>
+    <TextView
             android:id="@+id/actionBarRightText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,13 +36,4 @@
             android:text="sss"
             android:textSize="14sp"/>
 
-    <TextView
-            android:id="@+id/actionBarTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center_horizontal"
-            android:textColor="@color/white"
-            android:text="sss"
-            android:textSize="18sp"/>
 </RelativeLayout>
